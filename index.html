@@ -361,6 +361,7 @@
       </div>
       <div class="ps-row group"><span>PRISKAITYMAI (bruto)</span><span class="ps-val" id="a-ps-bruto-total">—</span></div>
       <div class="ps-row indent"><span>Bazinė alga (<span id="a-ps-rate">—</span> DKK × <span id="a-ps-hrs">—</span> val.)</span><span class="ps-val" id="a-ps-base">—</span></div>
+      <div class="ps-row indent"><span>SH su alga (9,8 %)</span><span class="ps-val" id="a-ps-sh-lobende">—</span></div>
       <div class="ps-row group"><span>IŠSKAITYMAI (mokesčiai)</span><span></span></div>
       <div class="ps-row indent deduct"><span>ATP (darbuotojo)</span><span class="ps-val" id="a-ps-atp">—</span></div>
       <div class="ps-row indent deduct"><span>Pensija darbuotojo (2 %)</span><span class="ps-val" id="a-ps-pension">—</span></div>
@@ -385,12 +386,10 @@
         <span class="ps-val" id="a-ps-neto-eur">—</span>
       </div>
       <div class="ps-row group"><span>SUKAUPSITE ŠĮ MĖNESĮ (išmokama atskirai)</span><span></span></div>
-      <div class="ps-row indent"><span>SH su alga (9,8 %)</span><span class="ps-val" id="a-ps-sh-lobende">—</span></div>
-      <div class="ps-row indent"><span>SH fondas (5,9 %)</span><span class="ps-val" id="a-ps-sh-optjent">—</span></div>
-      <div class="ps-row indent" style="font-weight:600"><span>SH viso bruto (15,7 %)</span><span class="ps-val" id="a-ps-sh">—</span></div>
+      <div class="ps-row indent"><span>SH kaupiniai (5,9 %)</span><span class="ps-val" id="a-ps-sh-optjent">—</span></div>
       <div class="ps-row indent"><span>Atostoginiai bruto (12,5 %)</span><span class="ps-val" id="a-ps-atost">—</span></div>
       <div class="ps-row indent" style="font-size:0.74rem;color:#9ca3af;">
-        <span>SH + atostoginiai neto po mokesčių (est. ×57,96 %)</span>
+        <span>SH kaupiniai + atostoginiai neto po mokesčių</span>
         <span class="ps-val" id="a-ps-sh-atost-neto">—</span>
       </div>
     </div>
@@ -780,14 +779,15 @@ function aCalc() {
   const skatBaze=Math.max(0,amInd*(1-A.AM)-fradrag), aSkat=skatBaze*skatPct;
   const netoP=base-atp-pension-amBidrag-aSkat, netoF=netoP-rent;
   const shB=base*A.SH, shLobende=base*A.SH_LOBENDE, shOptjent=base*A.SH_OPTJENT, holB=base*A.HOL, mn=(1-A.AM)*(1-skatPct);
-  const shN=shB*mn, holN=holB*mn, shAN=shN+holN;
+  const shN=shB*mn, shLobendeN=shLobende*mn, shOptjentN=shOptjent*mn, holN=holB*mn, shAN=shN+holN;
+  const sukaupNeto=shOptjentN+holN;
   const allN=netoF+shAN, allEH=hm>0?(allN/EUR_DKK)/hm:0;
-  aS={rate,hm,fradrag,skatPct,rent,atp,base,pension,amInd,amBidrag,skatBaze,aSkat,netoP,netoF,shB,shLobende,shOptjent,holB,shN,holN,shAN,allN,allEH};
+  aS={rate,hm,fradrag,skatPct,rent,atp,base,pension,amInd,amBidrag,skatBaze,aSkat,netoP,netoF,shB,shLobende,shLobendeN,shOptjent,shOptjentN,holB,shN,holN,shAN,sukaupNeto,allN,allEH};
   aRender();
 }
 function aRender() {
   if(!Object.keys(aS).length) return;
-  const {rate,hm,skatPct,rent,atp,base,pension,amInd,amBidrag,skatBaze,aSkat,netoP,netoF,shB,shLobende,shOptjent,holB,shN,holN,shAN,allN,allEH}=aS;
+  const {rate,hm,skatPct,rent,atp,base,pension,amInd,amBidrag,skatBaze,aSkat,netoP,netoF,shB,shLobende,shLobendeN,shOptjent,shOptjentN,holB,shN,holN,shAN,sukaupNeto,allN,allEH}=aS;
   const hr=rent>0, nd=hr?netoF:netoP;
   set('a-r-neto-val',fmtV(nd,0)); set('a-r-neto-curr',curr());
   set('a-r-neto-sub',`/ mėn. · ${fmt(hm,0)} val.`);
@@ -806,26 +806,26 @@ function aRender() {
   document.getElementById('a-ps-rate').textContent=fmt(rate,2);
   document.getElementById('a-ps-hrs').textContent=fmt(hm,1);
   document.getElementById('a-ps-skat-pct').textContent=Math.round(skatPct*100);
-  set('a-ps-bruto-total',fmtV(base,2)+' '+curr()); set('a-ps-base',fmtV(base,2)+' '+curr());
+  set('a-ps-bruto-total',fmtV(base+shLobende,2)+' '+curr()); set('a-ps-base',fmtV(base,2)+' '+curr());
   set('a-ps-atp',neg(atp)+' '+curr()); set('a-ps-pension',neg(pension)+' '+curr());
   set('a-ps-amind',fmtV(amInd,2)+' '+curr()); set('a-ps-ambidrag',neg(amBidrag)+' '+curr());
   set('a-ps-skatbaze',fmtV(skatBaze,2)+' '+curr()); set('a-ps-askat',neg(aSkat)+' '+curr());
-  set('a-ps-neto-pre',fmtV(netoP,2)+' '+curr());
-  set('a-ps-hr-pre',fmtV(hm>0?netoP/hm:0,2)+' '+curr()+'/val.');
+  set('a-ps-neto-pre',fmtV(netoP+shLobendeN,2)+' '+curr());
+  set('a-ps-hr-pre',fmtV(hm>0?(netoP+shLobendeN)/hm:0,2)+' '+curr()+'/val.');
   const rG=document.getElementById('a-ps-rent-group'),rR=document.getElementById('a-ps-rent-row');
   const aR=document.getElementById('a-ps-neto-after-row'),hR=document.getElementById('a-ps-hr-after-row');
   if(hr){
     rG.style.display=rR.style.display=aR.style.display=hR.style.display='';
-    set('a-ps-rent',neg(rent)+' '+curr()); set('a-ps-neto-after',fmtV(netoF,2)+' '+curr());
-    set('a-ps-hr-after',fmtV(hm>0?netoF/hm:0,2)+' '+curr()+'/val.');
+    set('a-ps-rent',neg(rent)+' '+curr()); set('a-ps-neto-after',fmtV(netoF+shLobendeN,2)+' '+curr());
+    set('a-ps-hr-after',fmtV(hm>0?(netoF+shLobendeN)/hm:0,2)+' '+curr()+'/val.');
     set('a-ps-eur-label',showEur?'DKK į rankas po nuomos':'≈ EUR į rankas po nuomos (kursas 7,48)');
   }else{
     rG.style.display=rR.style.display=aR.style.display=hR.style.display='none';
     set('a-ps-eur-label',showEur?'DKK į rankas':'≈ EUR į rankas (kursas 7,48)');
   }
-  set('a-ps-neto-eur',showEur?fmt((hr?netoF:netoP)/EUR_DKK*EUR_DKK,2)+' DKK':'≈ '+fmt((hr?netoF:netoP)/EUR_DKK,2)+' EUR');
-  set('a-ps-sh-lobende',fmtV(shLobende,2)+' '+curr()); set('a-ps-sh-optjent',fmtV(shOptjent,2)+' '+curr()); set('a-ps-sh',fmtV(shB,2)+' '+curr()); set('a-ps-atost',fmtV(holB,2)+' '+curr());
-  set('a-ps-sh-atost-neto','≈ '+fmtV(shAN,2)+' '+curr());
+  set('a-ps-neto-eur',showEur?fmt((hr?netoF:netoP)+shLobendeN,2)+' DKK':'≈ '+fmt(((hr?netoF:netoP)+shLobendeN)/EUR_DKK,2)+' EUR');
+  set('a-ps-sh-lobende',fmtV(shLobende,2)+' '+curr()); set('a-ps-sh-optjent',fmtV(shOptjent,2)+' '+curr()); set('a-ps-atost',fmtV(holB,2)+' '+curr());
+  set('a-ps-sh-atost-neto','≈ '+fmtV(sukaupNeto,2)+' '+curr());
 }
 ['a-rate','a-hours','a-fradrag','a-skat','a-rent'].forEach(id=>document.getElementById(id).addEventListener('input',aCalc));
 
