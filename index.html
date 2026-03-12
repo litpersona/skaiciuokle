@@ -778,14 +778,19 @@ function aCalc() {
   const rent=parseFloat(document.getElementById('a-rent').value)||0;
   const hm=hrs, atp=Math.min(A.ATP,A.ATP*(hm/(37*A.WM)));
   const base=rate*hm;
-  const pensBase=base*(1+A.HOL+A.SH), pension=pensBase*A.PENS;
-  const amInd=base-atp-pension, amBidrag=amInd*A.AM;
+  const shB=base*A.SH, shLobende=base*A.SH_LOBENDE, shOptjent=base*A.SH_OPTJENT, holB=base*A.HOL;
+  // FIX 1: pensijos bazė = bazinė × (1 + SH 15,7%) — be atostoginių
+  const pensBase=base*(1+A.SH), pension=pensBase*A.PENS;
+  // FIX 2: AM-bidrag bazė apima SH 9,8 % (išmokamą su alga) + fradrag taikomas visai sumai
+  const amInd=base+shLobende-atp-pension, amBidrag=amInd*A.AM;
   const skatBaze=Math.max(0,amInd*(1-A.AM)-fradrag), aSkat=skatBaze*skatPct;
-  const netoP=base-atp-pension-amBidrag-aSkat, netoF=netoP-rent;
-  const shB=base*A.SH, shLobende=base*A.SH_LOBENDE, shOptjent=base*A.SH_OPTJENT, holB=base*A.HOL, mn=(1-A.AM)*(1-skatPct);
+  // FIX 3: netoP / netoF jau apima SH 9,8 %
+  const netoP=base+shLobende-atp-pension-amBidrag-aSkat, netoF=netoP-rent;
+  const mn=(1-A.AM)*(1-skatPct);
   const shN=shB*mn, shLobendeN=shLobende*mn, shOptjentN=shOptjent*mn, holN=holB*mn, shAN=shN+holN;
   const sukaupNeto=shOptjentN+holN;
-  const allN=netoF+shAN, allEH=hm>0?(allN/EUR_DKK)/hm:0;
+  // FIX 4: allN = neto po nuomos + TIK fondo dalys (SH 5,9% + atost.) — SH 9,8% jau netoF viduje
+  const allN=netoF+sukaupNeto, allEH=hm>0?(allN/EUR_DKK)/hm:0;
   aS={rate,hm,fradrag,skatPct,rent,atp,base,pension,amInd,amBidrag,skatBaze,aSkat,netoP,netoF,shB,shLobende,shLobendeN,shOptjent,shOptjentN,holB,shN,holN,shAN,sukaupNeto,allN,allEH};
   aRender();
 }
@@ -800,7 +805,7 @@ function aRender() {
   if(hr){rn.style.display='';set('a-r-rent-val',fmtV(rent,0)+' '+curr());}else rn.style.display='none';
   set('a-r-sh-val',fmtV(shB,0)); set('a-r-sh-curr',curr()); set('a-r-sh-lobende',`Su alga išmokama (9,8 %): ${fmtV(shLobende,0)} ${curr()}`); set('a-r-sh-optjent',`Kaupiama fonde (5,9 %): ${fmtV(shOptjent,0)} ${curr()}`); set('a-r-sh-neto',`neto ≈ ${fmtV(shN,0)} ${curr()}`);
   set('a-r-atost-val',fmtV(holB,0)); set('a-r-atost-curr',curr()); set('a-r-atost-neto',`neto ≈ ${fmtV(holN,0)} ${curr()}`);
-  const aPR=netoP+shAN, aPH=hm>0?aPR/hm:0, aH=hm>0?allN/hm:0;
+  const aPR=netoP+sukaupNeto, aPH=hm>0?aPR/hm:0, aH=hm>0?allN/hm:0;
   set('a-sb-total',fmtV(aPR,0)); set('a-sb-total-curr',' '+curr());
   set('a-sb-hr',fmtV(aPH,2)); set('a-sb-hr-curr',' '+curr()+'/val.');
   set('a-sb-hr-sub',`${fmt(hm,1)} val. per mėn.`);
@@ -814,20 +819,20 @@ function aRender() {
   set('a-ps-atp',neg(atp)+' '+curr()); set('a-ps-pension',neg(pension)+' '+curr());
   set('a-ps-amind',fmtV(amInd,2)+' '+curr()); set('a-ps-ambidrag',neg(amBidrag)+' '+curr());
   set('a-ps-skatbaze',fmtV(skatBaze,2)+' '+curr()); set('a-ps-askat',neg(aSkat)+' '+curr());
-  set('a-ps-neto-pre',fmtV(netoP+shLobendeN,2)+' '+curr());
-  set('a-ps-hr-pre',fmtV(hm>0?(netoP+shLobendeN)/hm:0,2)+' '+curr()+'/val.');
+  set('a-ps-neto-pre',fmtV(netoP,2)+' '+curr());
+  set('a-ps-hr-pre',fmtV(hm>0?netoP/hm:0,2)+' '+curr()+'/val.');
   const rG=document.getElementById('a-ps-rent-group'),rR=document.getElementById('a-ps-rent-row');
   const aR=document.getElementById('a-ps-neto-after-row'),hR=document.getElementById('a-ps-hr-after-row');
   if(hr){
     rG.style.display=rR.style.display=aR.style.display=hR.style.display='';
-    set('a-ps-rent',neg(rent)+' '+curr()); set('a-ps-neto-after',fmtV(netoF+shLobendeN,2)+' '+curr());
-    set('a-ps-hr-after',fmtV(hm>0?(netoF+shLobendeN)/hm:0,2)+' '+curr()+'/val.');
+    set('a-ps-rent',neg(rent)+' '+curr()); set('a-ps-neto-after',fmtV(netoF,2)+' '+curr());
+    set('a-ps-hr-after',fmtV(hm>0?netoF/hm:0,2)+' '+curr()+'/val.');
     set('a-ps-eur-label',showEur?'DKK į rankas po nuomos':'≈ EUR į rankas po nuomos (kursas 7,48)');
   }else{
     rG.style.display=rR.style.display=aR.style.display=hR.style.display='none';
     set('a-ps-eur-label',showEur?'DKK į rankas':'≈ EUR į rankas (kursas 7,48)');
   }
-  set('a-ps-neto-eur',showEur?fmt((hr?netoF:netoP)+shLobendeN,2)+' DKK':'≈ '+fmt(((hr?netoF:netoP)+shLobendeN)/EUR_DKK,2)+' EUR');
+  set('a-ps-neto-eur',showEur?fmt((hr?netoF:netoP),2)+' DKK':'≈ '+fmt((hr?netoF:netoP)/EUR_DKK,2)+' EUR');
   set('a-ps-sh-lobende',fmtV(shLobende,2)+' '+curr()); set('a-ps-sh-optjent',fmtV(shOptjent,2)+' '+curr()); set('a-ps-atost',fmtV(holB,2)+' '+curr());
   set('a-ps-sh-atost-neto','≈ '+fmtV(sukaupNeto,2)+' '+curr());
 }
