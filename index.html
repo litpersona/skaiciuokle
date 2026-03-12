@@ -340,17 +340,16 @@
       <div class="result-card sh">
         <div class="rc-label">SH (Søgne- og Helligdag)</div>
         <div class="rc-main"><span id="a-r-sh-val">—</span> <span class="rc-curr" id="a-r-sh-curr">DKK</span></div>
-        <div class="rc-sub">15,7 % bruto šį mėn.</div>
+        <div class="rc-sub">neto į rankas po mokesčių</div>
+        <div class="rc-pct" id="a-r-sh-bruto">Bruto: — (15,7 %)</div>
         <div class="rc-pct" id="a-r-sh-lobende">Su alga išmokama (9,8 %): —</div>
         <div class="rc-pct" id="a-r-sh-optjent">Kaupiama fonde (5,9 %): —</div>
-        <div class="rc-pct" id="a-r-sh-neto">neto ≈ —</div>
       </div>
       <div class="result-card atost">
         <div class="rc-label">Atostoginiai (Feriepenge)</div>
         <div class="rc-main"><span id="a-r-atost-val">—</span> <span class="rc-curr" id="a-r-atost-curr">DKK</span></div>
-        <div class="rc-sub">bruto sukaups šį mėn.</div>
-        <div class="rc-pct">12,5 % nuo bazinės algos</div>
-        <div class="rc-pct" id="a-r-atost-neto">neto ≈ —</div>
+        <div class="rc-sub">neto sukaups po mokesčių</div>
+        <div class="rc-pct" id="a-r-atost-bruto">Bruto: — (12,5 %)</div>
       </div>
     </div>
 
@@ -806,8 +805,8 @@ function aRender() {
   set('a-r-allin',`${fmt(allEH,2)} EUR/val.`);
   const rn=document.getElementById('a-r-rent-note');
   if(hr){rn.style.display='';set('a-r-rent-val',fmtV(rent,0)+' '+curr());}else rn.style.display='none';
-  set('a-r-sh-val',fmtV(shB,0)); set('a-r-sh-curr',curr()); set('a-r-sh-lobende',`Su alga išmokama (9,8 %): ${fmtV(shLobende,0)} ${curr()}`); set('a-r-sh-optjent',`Kaupiama fonde (5,9 %): ${fmtV(shOptjent,0)} ${curr()}`); set('a-r-sh-neto',`neto ≈ ${fmtV(shN,0)} ${curr()}`);
-  set('a-r-atost-val',fmtV(holB,0)); set('a-r-atost-curr',curr()); set('a-r-atost-neto',`neto ≈ ${fmtV(holN,0)} ${curr()}`);
+  set('a-r-sh-val',fmtV(shN,0)); set('a-r-sh-curr',curr()); set('a-r-sh-bruto',`Bruto: ${fmtV(shB,0)} ${curr()} (15,7 %)`); set('a-r-sh-lobende',`Su alga išmokama (9,8 %): ${fmtV(shLobende,0)} ${curr()}`); set('a-r-sh-optjent',`Kaupiama fonde (5,9 %): ${fmtV(shOptjent,0)} ${curr()}`);
+  set('a-r-atost-val',fmtV(holN,0)); set('a-r-atost-curr',curr()); set('a-r-atost-bruto',`Bruto: ${fmtV(holB,0)} ${curr()} (12,5 %)`);
   const aPR=netoP+sukaupNeto, aPH=hm>0?aPR/hm:0, aH=hm>0?allN/hm:0;
   set('a-sb-total',fmtV(aPR,0)); set('a-sb-total-curr',' '+curr());
   set('a-sb-hr',fmtV(aPH,2)); set('a-sb-hr-curr',' '+curr()+'/val.');
