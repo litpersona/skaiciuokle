@@ -92,12 +92,16 @@
   .tab-nav {
     display: flex;
     border-top: 1px solid rgba(255,255,255,0.12);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
+  .tab-nav::-webkit-scrollbar { display: none; }
   .tab-btn {
     padding: 10px 22px; font-size: 0.82rem; font-weight: 600;
     color: rgba(255,255,255,0.5); background: transparent; border: none;
     cursor: pointer; border-bottom: 3px solid transparent; transition: all .18s;
-    white-space: nowrap;
+    white-space: nowrap; flex-shrink: 0;
   }
   .tab-btn:hover { color: rgba(255,255,255,0.85); }
   .tab-btn.active { color: white; border-bottom-color: #fbbf24; }
@@ -247,6 +251,17 @@
   /* ── NOTE ── */
   .note { margin-top: 20px; font-size: 0.71rem; color: #9ca3af; line-height: 1.6; border-top: 1px solid #f3f4f6; padding-top: 14px; }
   .note b { color: #6b7280; }
+
+  /* ── MOBILE ── */
+  @media(max-width:480px){
+    body { padding: 0 0 40px; }
+    .site-header { border-radius: 0; padding: 14px 16px 0; }
+    .card { border-radius: 0; padding: 18px 14px 28px; }
+    .rc-main { font-size: 1.25rem; }
+    .sb-value { font-size: 1.25rem; }
+    .sb-cell { padding: 10px 14px; }
+    .sb-col-head { padding: 8px 14px 6px; }
+  }
 </style>
 </head>
 <body>
