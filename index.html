@@ -807,13 +807,13 @@ function aRender() {
   if(!Object.keys(aS).length) return;
   const {rate,hm,skatPct,rent,atp,base,pension,amInd,amBidrag,skatBaze,aSkat,netoP,netoF,shB,shLobende,shLobendeN,shOptjent,shOptjentN,holB,shN,holN,shAN,sukaupNeto,allN,allEH}=aS;
   const hr=rent>0, nd=hr?netoF:netoP;
-  set('a-r-neto-val',fmtV(nd,0)); set('a-r-neto-curr',curr());
+  set('a-r-neto-val',fmtV(nd,2)); set('a-r-neto-curr',curr());
   set('a-r-neto-sub',`/ mėn. · ${fmt(hm,0)} val.`);
   set('a-r-allin',`${fmt(allEH,2)} EUR/val.`);
   const rn=document.getElementById('a-r-rent-note');
-  if(hr){rn.style.display='';set('a-r-rent-val',fmtV(rent,0)+' '+curr());}else rn.style.display='none';
-  set('a-r-sh-val',fmtV(shOptjentN,0)); set('a-r-sh-curr',curr()); set('a-r-sh-bruto',`Bruto: ${fmtV(shOptjent,0)} ${curr()} (5,9 %)`); set('a-r-sh-lobende',`SH 9,8 % (${fmtV(shLobende,0)} ${curr()}) — mokama su alga, įskaičiuota į algą`);
-  set('a-r-atost-val',fmtV(holN,0)); set('a-r-atost-curr',curr()); set('a-r-atost-bruto',`Bruto: ${fmtV(holB,0)} ${curr()} (12,5 %)`);
+  if(hr){rn.style.display='';set('a-r-rent-val',fmtV(rent,2)+' '+curr());}else rn.style.display='none';
+  set('a-r-sh-val',fmtV(shOptjentN,2)); set('a-r-sh-curr',curr()); set('a-r-sh-bruto',`Bruto: ${fmtV(shOptjent,2)} ${curr()} (5,9 %)`); set('a-r-sh-lobende',`SH 9,8 % (${fmtV(shLobende,2)} ${curr()}) — mokama su alga, įskaičiuota į algą`);
+  set('a-r-atost-val',fmtV(holN,2)); set('a-r-atost-curr',curr()); set('a-r-atost-bruto',`Bruto: ${fmtV(holB,2)} ${curr()} (12,5 %)`);
   const aPR=netoP+sukaupNeto, aPH=hm>0?aPR/hm:0, aH=hm>0?allN/hm:0;
   set('a-sb-total',fmtV(aPR,0)); set('a-sb-total-curr',' '+curr());
   set('a-sb-hr',fmtV(aPH,2)); set('a-sb-hr-curr',' '+curr()+'/val.');
