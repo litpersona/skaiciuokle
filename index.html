@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Litpersona â SkaiÄiuoklÄs (DK)</title>
+<title>Litpersona – Skaičiuoklės (DK)</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -17,7 +17,7 @@
   }
 
 
-  /* ââ INFO TAB ââ */
+  /* ── INFO TAB ── */
   .info-tab { display: flex; flex-direction: column; gap: 0; }
   .info-item {
     border-bottom: 1px solid #e5e7eb;
@@ -53,7 +53,7 @@
   .info-note { background: #FEF9C3; border-left: 3px solid #EAB308; border-radius: 0 6px 6px 0;
     padding: 8px 12px; margin-top: 10px; font-size: 0.77rem; color: #713F12; }
 
-  /* ââ SITE HEADER ââ */
+  /* ── SITE HEADER ── */
   .site-header {
     width: 100%;
     max-width: 740px;
@@ -73,9 +73,9 @@
     padding-bottom: 14px;
   }
   .site-logo { display: flex; flex-direction: column; gap: 4px; }
-  .logo-text { font-size: 1.35rem; font-weight: 700; letter-spacing: 0.04em; color: #fff; }
+  .logo-img { height: 34px; width: auto; display: block; }
 
-  /* ââ CURRENCY TOGGLE ââ */
+  /* ── CURRENCY TOGGLE ── */
   .curr-toggle {
     display: flex; align-items: center;
     background: rgba(255,255,255,0.12);
@@ -88,7 +88,7 @@
   }
   .curr-btn.active { background: white; color: #1F3864; box-shadow: 0 2px 8px rgba(0,0,0,0.18); }
 
-  /* ââ TAB NAV ââ */
+  /* ── TAB NAV ── */
   .tab-nav {
     display: flex;
     border-top: 1px solid rgba(255,255,255,0.12);
@@ -103,7 +103,7 @@
   .tab-btn.active { color: white; border-bottom-color: #fbbf24; }
   @media(max-width:480px){ .tab-btn { padding: 10px 14px; font-size: 0.77rem; } }
 
-  /* ââ CARD ââ */
+  /* ── CARD ── */
   .card {
     background: white; width: 100%; max-width: 740px;
     border-radius: 0 0 12px 12px;
@@ -111,18 +111,18 @@
     padding: 28px 28px 32px;
   }
 
-  /* ââ TAB PANELS ââ */
+  /* ── TAB PANELS ── */
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
 
-  /* ââ SECTION TITLE ââ */
+  /* ── SECTION TITLE ── */
   .section-title {
     font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
     letter-spacing: 1.2px; color: #1F3864;
     margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #1F3864;
   }
 
-  /* ââ INPUTS ââ */
+  /* ── INPUTS ── */
   .inputs-grid {
     display: grid; grid-template-columns: 1fr 1fr 1fr;
     gap: 14px 20px; margin-bottom: 10px;
@@ -163,7 +163,7 @@
   }
   .rent-wrap .unit { background: #fef3c7; color: #92400e; border-color: #fde68a; }
 
-  /* ââ INFO BOX ââ */
+  /* ── INFO BOX ── */
   .info-box {
     background: #EBF5FB; border-left: 3px solid #1F3864;
     border-radius: 0 8px 8px 0; padding: 10px 14px; margin-bottom: 24px;
@@ -171,7 +171,7 @@
   }
   .info-box b { color: #1F3864; }
 
-  /* ââ RESULT CARDS ââ */
+  /* ── RESULT CARDS ── */
   .results-grid-3 {
     display: grid; grid-template-columns: 1.1fr 0.95fr 0.95fr;
     gap: 12px; margin-bottom: 24px;
@@ -197,7 +197,7 @@
   .rc-eur { margin-top: 9px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.22); font-size: 0.73rem; opacity: 0.72; line-height: 1.5; }
   .rc-eur b { font-size: 1rem; font-weight: 800; opacity: 1; display: block; margin-top: 1px; }
 
-  /* ââ PAYSLIP ââ */
+  /* ── PAYSLIP ── */
   .payslip-header-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
   .ps-badge { font-size: 0.7rem; font-weight: 700; color: #1F3864; background: #EBF5FB; padding: 3px 10px; border-radius: 20px; }
   .payslip { border: 1.5px solid #e5e7eb; border-radius: 10px; overflow: hidden; margin-bottom: 20px; }
@@ -214,7 +214,7 @@
   .ps-row.rent-row .ps-val { color: #d97706; font-weight: 600; }
   .ps-val { font-weight: 500; white-space: nowrap; margin-left: 8px; }
 
-  /* ââ SUMMARY BAR ââ */
+  /* ── SUMMARY BAR ── */
   .summary-bar { margin-bottom: 24px; background: linear-gradient(135deg, #0f2240 0%, #1F3864 100%); border-radius: 10px; overflow: hidden; }
   .sb-title-row { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid rgba(255,255,255,0.12); }
   .sb-col-head { padding: 10px 20px 8px; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #a8bfd4; }
@@ -236,18 +236,26 @@
     .sb-col-head:first-child, .sb-cell:first-child { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
   }
 
-  /* ââ NOTE ââ */
+  /* ── NOTE ── */
   .note { margin-top: 20px; font-size: 0.71rem; color: #9ca3af; line-height: 1.6; border-top: 1px solid #f3f4f6; padding-top: 14px; }
   .note b { color: #6b7280; }
 </style>
 </head>
 <body>
 
-<!-- ââ SITE HEADER + TABS ââ -->
+<!-- ══ SITE HEADER + TABS ══ -->
 <div class="site-header">
   <div class="site-header-top">
     <div class="site-logo">
-      <span class="logo-text">Litpersona</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165 30" height="34" style="display:block" role="img" aria-label="Litpersona">
+        <polygon points="17,2 30,26 25.17,28.62 12.17,4.62" fill="white"/>
+        <polygon points="30,26 4,26 4,20.5 30,20.5" fill="white"/>
+        <polygon points="4,26 17,2 21.83,4.62 8.83,28.62" fill="white"/>
+        <polygon points="17,2 12.17,4.62 21.83,4.62" fill="#1F3864"/>
+        <polygon points="30,26 30,20.5 25.17,28.62" fill="#1F3864"/>
+        <polygon points="4,26 8.83,28.62 4,20.5" fill="#1F3864"/>
+        <text x="36" y="21" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="bold" fill="white" letter-spacing="1">LITPERSONA</text>
+      </svg>
     </div>
     <div class="curr-toggle">
       <button class="curr-btn active" id="btn-dkk" onclick="setCurr('DKK')">DKK</button>
@@ -255,60 +263,60 @@
     </div>
   </div>
   <nav class="tab-nav">
-    <button class="tab-btn active" onclick="showTab('atlyg', this)">Atlyginimo skaiÄiuoklÄ</button>
-    <button class="tab-btn"        onclick="showTab('kaupin', this)">KaupiniÅ³ skaiÄiuoklÄ</button>
+    <button class="tab-btn active" onclick="showTab('atlyg', this)">Atlyginimo skaičiuoklė</button>
+    <button class="tab-btn"        onclick="showTab('kaupin', this)">Kaupinių skaičiuoklė</button>
     <button class="tab-btn"        onclick="showTab('info', this)">Svarbi informacija</button>
   </nav>
 </div>
 
 <div class="card">
 
-  <!-- ââ TAB 1 â ATLYGINIMO SKAIÄIUOKLÄ ââ -->
+  <!-- ══ TAB 1 — ATLYGINIMO SKAIČIUOKLĖ ══ -->
   <div id="tab-atlyg" class="tab-panel active">
 
     <div class="info-box">
-      Ä®veskite savo <b>valandinÄ¯ Ä¯kainÄ¯</b> ir per algÅ³ laikotarpÄ¯ dirbtÅ³ (arba planuojamÅ³ dirbti) <b>valandÅ³ skaiÄiÅ³</b>. Savo <b>Fradrag</b> (neapmokestinamas pajamÅ³ dydis) ir <b>A-skat %</b> rasite savo skattekortet arba naujausiame algalapyje. Atlyginimas bus apskaiÄiuotas automatiÅ¡kai â iÅ¡skaiÄiuojant AM-bidrag (8 %), ATP, pensijÄ ir A-skat.
+      Įveskite savo <b>valandinį įkainį</b> ir per algų laikotarpį dirbtų (arba planuojamų dirbti) <b>valandų skaičių</b>. Savo <b>Fradrag</b> (neapmokestinamas pajamų dydis) ir <b>A-skat %</b> rasite savo skattekortet arba naujausiame algalapyje. Atlyginimas bus apskaičiuotas automatiškai — išskaičiuojant AM-bidrag (8 %), ATP, pensiją ir A-skat.
     </div>
 
-    <div class="section-title">JÅ«sÅ³ duomenys</div>
+    <div class="section-title">Jūsų duomenys</div>
     <div class="inputs-grid">
       <div class="input-group">
-        <label>Valandinis Ä¯kainis</label>
-        <span class="hint">DKK prieÅ¡ mokesÄius (bruto)</span>
+        <label>Valandinis įkainis</label>
+        <span class="hint">DKK prieš mokesčius (bruto)</span>
         <div class="input-wrap">
           <input type="number" id="a-rate" value="172" min="50" max="500" step="1">
           <span class="unit">DKK/val</span>
         </div>
       </div>
       <div class="input-group">
-        <label>Val. per mÄnesÄ¯</label>
-        <span class="hint">Pilnas etatas = 155,4 val/mÄn.</span>
+        <label>Val. per mėnesį</label>
+        <span class="hint">Pilnas etatas = 155,4 val/mėn.</span>
         <div class="input-wrap">
           <input type="number" id="a-hours" value="155.4" min="1" max="400" step="0.5">
-          <span class="unit">val/mÄn</span>
+          <span class="unit">val/mėn</span>
         </div>
       </div>
       <div class="input-group">
         <label>Nuoma (Husleje)</label>
-        <span class="hint">IÅ¡skaiÄiuojama iÅ¡ algos. 0 jei nÄra</span>
+        <span class="hint">Išskaičiuojama iš algos. 0 jei nėra</span>
         <div class="input-wrap rent-wrap">
           <input type="number" id="a-rent" value="0" min="0" max="20000" step="50">
-          <span class="unit">DKK/mÄn</span>
+          <span class="unit">DKK/mėn</span>
         </div>
       </div>
     </div>
     <div class="inputs-grid-bottom">
       <div class="input-group">
-        <label>Fradrag (mÄnesinis)</label>
-        <span class="hint">IÅ¡ skattekortet â pvz. 6661</span>
+        <label>Fradrag (mėnesinis)</label>
+        <span class="hint">Iš skattekortet — pvz. 6661</span>
         <div class="input-wrap">
           <input type="number" id="a-fradrag" value="6661" min="0" max="30000" step="1">
-          <span class="unit">DKK/mÄn</span>
+          <span class="unit">DKK/mėn</span>
         </div>
       </div>
       <div class="input-group">
-        <label>TrÃ¦kprocent (A-skat)</label>
-        <span class="hint">IÅ¡ skattekortet â pvz. 37</span>
+        <label>Trækprocent (A-skat)</label>
+        <span class="hint">Iš skattekortet — pvz. 37</span>
         <div class="input-wrap">
           <input type="number" id="a-skat" value="37" min="1" max="60" step="1">
           <span class="unit">%</span>
@@ -316,129 +324,128 @@
       </div>
     </div>
 
-    <div class="section-title">Rezultatai per mÄnesÄ¯</div>
+    <div class="section-title">Rezultatai per mėnesį</div>
     <div class="results-grid-3">
       <div class="result-card main">
-        <div class="rc-label">TIL UDBETALING â Ä¯ rankas</div>
-        <div class="rc-main"><span id="a-r-neto-val">â</span> <span class="rc-curr" id="a-r-neto-curr">DKK</span></div>
-        <div class="rc-sub" id="a-r-neto-sub">/ mÄn.</div>
-        <div class="rc-sub" id="a-r-neto-breakdown" style="opacity:0.72;font-size:0.72rem;margin-top:2px;">alga + SH (9,8 %)</div>
-        <div class="rc-allin">Su kaupiniais + atostoginiais:<br><b id="a-r-allin">â EUR/val.</b></div>
-        <div class="rc-rent-note" id="a-r-rent-note" style="display:none">ð  â <span id="a-r-rent-val">â</span> nuoma atskaiÄiuota</div>
+        <div class="rc-label">Neto alga į rankas</div>
+        <div class="rc-main"><span id="a-r-neto-val">—</span> <span class="rc-curr" id="a-r-neto-curr">DKK</span></div>
+        <div class="rc-sub" id="a-r-neto-sub">/ mėn.</div>
+        <div class="rc-allin">Viskas į rankas (+ SH + atost.):<br><b id="a-r-allin">— EUR/val.</b></div>
+        <div class="rc-rent-note" id="a-r-rent-note" style="display:none">🏠 – <span id="a-r-rent-val">—</span> nuoma atskaičiuota</div>
       </div>
       <div class="result-card sh">
-        <div class="rc-label">SH (SÃ¸gne- og Helligdag)</div>
-        <div class="rc-main"><span id="a-r-sh-val">â</span> <span class="rc-curr" id="a-r-sh-curr">DKK</span></div>
-        <div class="rc-sub">15,7 % bruto Å¡Ä¯ mÄn.</div>
-        <div class="rc-pct" id="a-r-sh-lobende">Su alga iÅ¡mokama (9,8 %): â</div>
-        <div class="rc-pct" id="a-r-sh-optjent">Kaupiama fonde (5,9 %): â</div>
-        <div class="rc-pct" id="a-r-sh-neto">neto â â</div>
+        <div class="rc-label">SH (Søgne- og Helligdag)</div>
+        <div class="rc-main"><span id="a-r-sh-val">—</span> <span class="rc-curr" id="a-r-sh-curr">DKK</span></div>
+        <div class="rc-sub">15,7 % bruto šį mėn.</div>
+        <div class="rc-pct" id="a-r-sh-lobende">Su alga išmokama (9,8 %): —</div>
+        <div class="rc-pct" id="a-r-sh-optjent">Kaupiama fonde (5,9 %): —</div>
+        <div class="rc-pct" id="a-r-sh-neto">neto ≈ —</div>
       </div>
       <div class="result-card atost">
         <div class="rc-label">Atostoginiai (Feriepenge)</div>
-        <div class="rc-main"><span id="a-r-atost-val">â</span> <span class="rc-curr" id="a-r-atost-curr">DKK</span></div>
-        <div class="rc-sub">bruto sukaups Å¡Ä¯ mÄn.</div>
-        <div class="rc-pct">12,5 % nuo bazinÄs algos</div>
-        <div class="rc-pct" id="a-r-atost-neto">neto â â</div>
+        <div class="rc-main"><span id="a-r-atost-val">—</span> <span class="rc-curr" id="a-r-atost-curr">DKK</span></div>
+        <div class="rc-sub">bruto sukaups šį mėn.</div>
+        <div class="rc-pct">12,5 % nuo bazinės algos</div>
+        <div class="rc-pct" id="a-r-atost-neto">neto ≈ —</div>
       </div>
     </div>
 
     <div class="payslip-header-bar">
-      <div class="section-title" style="margin:0;border:none;padding:0">Algalapio struktÅ«ra</div>
+      <div class="section-title" style="margin:0;border:none;padding:0">Algalapio struktūra</div>
       <span class="ps-badge" id="a-ps-badge">DKK</span>
     </div>
     <div class="payslip">
       <div class="ps-head">
-        <span>Algalapis â standartinis mÄnuo</span>
-        <span class="ps-sub" id="a-ps-period">â</span>
+        <span>Algalapis — standartinis mėnuo</span>
+        <span class="ps-sub" id="a-ps-period">—</span>
       </div>
-      <div class="ps-row group"><span>PRISKAITYMAI (bruto)</span><span class="ps-val" id="a-ps-bruto-total">â</span></div>
-      <div class="ps-row indent"><span>BazinÄ alga (<span id="a-ps-rate">â</span> DKK Ã <span id="a-ps-hrs">â</span> val.)</span><span class="ps-val" id="a-ps-base">â</span></div>
-      <div class="ps-row indent"><span>SH su alga (9,8 %)</span><span class="ps-val" id="a-ps-sh-lobende">â</span></div>
-      <div class="ps-row group"><span>IÅ SKAITYMAI (mokesÄiai)</span><span></span></div>
-      <div class="ps-row indent deduct"><span>ATP (darbuotojo)</span><span class="ps-val" id="a-ps-atp">â</span></div>
-      <div class="ps-row indent deduct"><span>Pensija darbuotojo (2 %)</span><span class="ps-val" id="a-ps-pension">â</span></div>
-      <div class="ps-row indent"><span>AM-indkomst</span><span class="ps-val" id="a-ps-amind">â</span></div>
-      <div class="ps-row indent deduct"><span>AM-bidrag (8 %)</span><span class="ps-val" id="a-ps-ambidrag">â</span></div>
-      <div class="ps-row indent"><span>A-skat bazÄ (AM-ind. Ã 92 % â fradrag)</span><span class="ps-val" id="a-ps-skatbaze">â</span></div>
-      <div class="ps-row indent deduct"><span>A-skat (<span id="a-ps-skat-pct">â</span> %)</span><span class="ps-val" id="a-ps-askat">â</span></div>
-      <div class="ps-row ps-total"><span>TIL UDBETALING (prieÅ¡ nuomÄ)</span><span class="ps-val" id="a-ps-neto-pre">â</span></div>
+      <div class="ps-row group"><span>PRISKAITYMAI (bruto)</span><span class="ps-val" id="a-ps-bruto-total">—</span></div>
+      <div class="ps-row indent"><span>Bazinė alga (<span id="a-ps-rate">—</span> DKK × <span id="a-ps-hrs">—</span> val.)</span><span class="ps-val" id="a-ps-base">—</span></div>
+      <div class="ps-row indent"><span>SH su alga (9,8 %)</span><span class="ps-val" id="a-ps-sh-lobende">—</span></div>
+      <div class="ps-row group"><span>IŠSKAITYMAI (mokesčiai)</span><span></span></div>
+      <div class="ps-row indent deduct"><span>ATP (darbuotojo)</span><span class="ps-val" id="a-ps-atp">—</span></div>
+      <div class="ps-row indent deduct"><span>Pensija darbuotojo (2 %)</span><span class="ps-val" id="a-ps-pension">—</span></div>
+      <div class="ps-row indent"><span>AM-indkomst</span><span class="ps-val" id="a-ps-amind">—</span></div>
+      <div class="ps-row indent deduct"><span>AM-bidrag (8 %)</span><span class="ps-val" id="a-ps-ambidrag">—</span></div>
+      <div class="ps-row indent"><span>A-skat bazė (AM-ind. × 92 % – fradrag)</span><span class="ps-val" id="a-ps-skatbaze">—</span></div>
+      <div class="ps-row indent deduct"><span>A-skat (<span id="a-ps-skat-pct">—</span> %)</span><span class="ps-val" id="a-ps-askat">—</span></div>
+      <div class="ps-row ps-total"><span>TIL UDBETALING (prieš nuomą)</span><span class="ps-val" id="a-ps-neto-pre">—</span></div>
       <div class="ps-row indent" style="background:#e8eef7;font-size:0.74rem;color:#1F3864;">
-        <span>â³ Valandinis Ä¯ rankas (prieÅ¡ nuomÄ)</span>
-        <span class="ps-val" id="a-ps-hr-pre" style="font-weight:700;color:#1F3864;">â</span>
+        <span>↳ Valandinis į rankas (prieš nuomą)</span>
+        <span class="ps-val" id="a-ps-hr-pre" style="font-weight:700;color:#1F3864;">—</span>
       </div>
-      <div class="ps-row group" id="a-ps-rent-group" style="display:none"><span>PAPILDOMI IÅ SKAITYMAI</span><span></span></div>
-      <div class="ps-row indent rent-row" id="a-ps-rent-row" style="display:none"><span>ð  Nuoma (Husleje)</span><span class="ps-val" id="a-ps-rent">â</span></div>
-      <div class="ps-row ps-total-after" id="a-ps-neto-after-row" style="display:none"><span>Ä® RANKAS PO NUOMOS</span><span class="ps-val" id="a-ps-neto-after">â</span></div>
+      <div class="ps-row group" id="a-ps-rent-group" style="display:none"><span>PAPILDOMI IŠSKAITYMAI</span><span></span></div>
+      <div class="ps-row indent rent-row" id="a-ps-rent-row" style="display:none"><span>🏠 Nuoma (Husleje)</span><span class="ps-val" id="a-ps-rent">—</span></div>
+      <div class="ps-row ps-total-after" id="a-ps-neto-after-row" style="display:none"><span>Į RANKAS PO NUOMOS</span><span class="ps-val" id="a-ps-neto-after">—</span></div>
       <div class="ps-row indent" id="a-ps-hr-after-row" style="display:none;background:#1a2e4a;font-size:0.74rem;color:#fbbf24;">
-        <span>â³ Valandinis Ä¯ rankas (po nuomos)</span>
-        <span class="ps-val" id="a-ps-hr-after" style="font-weight:700;color:#fbbf24;">â</span>
+        <span>↳ Valandinis į rankas (po nuomos)</span>
+        <span class="ps-val" id="a-ps-hr-after" style="font-weight:700;color:#fbbf24;">—</span>
       </div>
       <div class="ps-row" style="background:#f8fafc;font-size:0.75rem;color:#6b7280;padding:6px 16px;">
-        <span id="a-ps-eur-label">â EUR Ä¯ rankas (kursas 7,48)</span>
-        <span class="ps-val" id="a-ps-neto-eur">â</span>
+        <span id="a-ps-eur-label">≈ EUR į rankas (kursas 7,48)</span>
+        <span class="ps-val" id="a-ps-neto-eur">—</span>
       </div>
-      <div class="ps-row group"><span>SUKAUPSITE Å D® MÄNESÄ® (iÅ¡mokama atskirai)</span><span></span></div>
-      <div class="ps-row indent"><span>SH kaupiniai (5,9 %)</span><span class="ps-val" id="a-ps-sh-optjent">â</span></div>
-      <div class="ps-row indent"><span>Atostoginiai bruto (12,5 %)</span><span class="ps-val" id="a-ps-atost">â</span></div>
+      <div class="ps-row group"><span>SUKAUPSITE ŠĮ MĖNESĮ (išmokama atskirai)</span><span></span></div>
+      <div class="ps-row indent"><span>SH kaupiniai (5,9 %)</span><span class="ps-val" id="a-ps-sh-optjent">—</span></div>
+      <div class="ps-row indent"><span>Atostoginiai bruto (12,5 %)</span><span class="ps-val" id="a-ps-atost">—</span></div>
       <div class="ps-row indent" style="font-size:0.74rem;color:#9ca3af;">
-        <span>SH kaupiniai + atostoginiai neto po mokesÄiÅ³</span>
-        <span class="ps-val" id="a-ps-sh-atost-neto">â</span>
+        <span>SH kaupiniai + atostoginiai neto po mokesčių</span>
+        <span class="ps-val" id="a-ps-sh-atost-neto">—</span>
       </div>
     </div>
 
     <div class="summary-bar" style="margin-top:16px;">
       <div class="sb-title-row">
-        <div class="sb-col-head">Viso neto Ä¯ rankas per mÄn.</div>
-        <div class="sb-col-head">Valandinis uÅ¾darbis neto</div>
+        <div class="sb-col-head">Viso neto į rankas per mėn.</div>
+        <div class="sb-col-head">Valandinis uždarbis neto</div>
       </div>
       <div class="sb-data-row">
         <div class="sb-cell">
-          <div class="sb-row-label">PrieÅ¡ nuomÄ</div>
-          <div class="sb-value"><span id="a-sb-total">â</span><span class="sb-curr" id="a-sb-total-curr"> DKK</span></div>
+          <div class="sb-row-label">Prieš nuomą</div>
+          <div class="sb-value"><span id="a-sb-total">—</span><span class="sb-curr" id="a-sb-total-curr"> DKK</span></div>
           <div class="sb-sub">Alga + SH + Atost. neto</div>
         </div>
         <div class="sb-cell">
-          <div class="sb-row-label">PrieÅ¡ nuomÄ</div>
-          <div class="sb-value"><span id="a-sb-hr">â</span><span class="sb-curr" id="a-sb-hr-curr"> DKK/val.</span></div>
-          <div class="sb-sub" id="a-sb-hr-sub">â val. per mÄn.</div>
+          <div class="sb-row-label">Prieš nuomą</div>
+          <div class="sb-value"><span id="a-sb-hr">—</span><span class="sb-curr" id="a-sb-hr-curr"> DKK/val.</span></div>
+          <div class="sb-sub" id="a-sb-hr-sub">— val. per mėn.</div>
         </div>
       </div>
       <div class="sb-data-row rent-row" id="a-sb-rent-row" style="display:none;">
         <div class="sb-cell">
           <div class="sb-row-label after">Po nuomos</div>
-          <div class="sb-value after"><span id="a-sb-total-after">â</span><span class="sb-curr after" id="a-sb-total-after-curr"> DKK</span></div>
+          <div class="sb-value after"><span id="a-sb-total-after">—</span><span class="sb-curr after" id="a-sb-total-after-curr"> DKK</span></div>
         </div>
         <div class="sb-cell">
           <div class="sb-row-label after">Po nuomos</div>
-          <div class="sb-value after"><span id="a-sb-hr-after">â</span><span class="sb-curr after" id="a-sb-hr-after-curr"> DKK/val.</span></div>
+          <div class="sb-value after"><span id="a-sb-hr-after">—</span><span class="sb-curr after" id="a-sb-hr-after-curr"> DKK/val.</span></div>
         </div>
       </div>
     </div>
 
     <div class="note">
-      <b>Pastabos:</b> SkaiÄiuojama pagal DIO II kolektyvinÄ sutartÄ¯ (SH 15,7 % nuo 2026-03-01: 9,8 % iÅ¡mokama su alga + 5,9 % kaupiama fonde).
-      ATP proporcinga valandoms (maks. 99 DKK/mÄn.). Pensija â 2% nuo pensinio pagrindo (bazinÄ alga + SH + atostoginiai), PensionDanmark, darbuotojo dalis.
-      SH ir atostoginiai kaupiami fonde ir iÅ¡mokami atskirai.
-      <b>Nuoma (Husleje)</b> iÅ¡skaiÄiuojama iÅ¡ jau apmokestinto neto â mokesÄiai nuo jos neskaiÄiuojami.
-      EUR kursas: <b>7,48 DKI/EUR</b>.
+      <b>Pastabos:</b> Skaičiuojama pagal DIO II kolektyvinę sutartį (SH 15,7 % nuo 2026-03-01: 9,8 % išmokama su alga + 5,9 % kaupiama fonde).
+      ATP proporcinga valandoms (maks. 99 DKK/mėn.). Pensija – 2% nuo pensinio pagrindo (bazinės algos (PensionDanmark, darbuotojo dalis).
+      SH ir atostoginiai kaupiami fonde ir išmokami atskirai.
+      <b>Nuoma (Husleje)</b> išskaičiuojama iš jau apmokestinto neto — mokesčiai nuo jos neskaičiuojami.
+      EUR kursas: <b>7,48 DKK/EUR</b>.
     </div>
   </div><!-- /tab-atlyg -->
 
 
-  <!-- ââ TAB 2 â KAUPINIÅ² SKAIÄIUOKLÄ ââ -->
+  <!-- ══ TAB 2 — KAUPINIŲ SKAIČIUOKLĖ ══ -->
   <div id="tab-kaupin" class="tab-panel">
 
     <div class="info-box">
-      Ä®veskite sukauptas <b>bruto</b> sumas iÅ¡ savo algalapio arba Feriekort iÅ¡raÅ¡o.
-      AM-bidrag (8 %) ir A-skat bus iÅ¡skaiÄiuoti automatiÅ¡kai. Fradrag taikomas bendrai sumai.
+      Įveskite sukauptas <b>bruto</b> sumas iš savo algalapio arba Feriekort išrašo.
+      AM-bidrag (8 %) ir A-skat bus išskaičiuoti automatiškai. Fradrag taikomas bendrai sumai.
     </div>
 
-    <div class="section-title">JÅ«sÅ³ duomenys</div>
+    <div class="section-title">Jūsų duomenys</div>
     <div class="inputs-grid-2">
       <div class="input-group">
         <label>Optjent SH (bruto)</label>
-        <span class="hint">IÅ¡ algalapio â sukauptas SH</span>
+        <span class="hint">Iš algalapio — sukauptas SH</span>
         <div class="input-wrap">
           <input type="number" id="k-sh" value="0" min="0" max="100000" step="1">
           <span class="unit">DKK</span>
@@ -446,23 +453,23 @@
       </div>
       <div class="input-group">
         <label>Bruttoferiepenge (bruto)</label>
-        <span class="hint">Atostoginiai iÅ¡ Feriekort / algalapio</span>
+        <span class="hint">Atostoginiai iš Feriekort / algalapio</span>
         <div class="input-wrap">
           <input type="number" id="k-atost" value="0" min="0" max="200000" step="1">
           <span class="unit">DKK</span>
         </div>
       </div>
       <div class="input-group">
-        <label>Fradrag (mÄnesinis)</label>
-        <span class="hint">IÅ¡ skattekortet â pvz. 6661</span>
+        <label>Fradrag (mėnesinis)</label>
+        <span class="hint">Iš skattekortet — pvz. 6661</span>
         <div class="input-wrap">
           <input type="number" id="k-fradrag" value="6661" min="0" max="30000" step="1">
           <span class="unit">DKK</span>
         </div>
       </div>
       <div class="input-group">
-        <label>TrÃ¦kprocent (A-skat)</label>
-        <span class="hint">IÅ¡ skattekortet â pvz. 37</span>
+        <label>Trækprocent (A-skat)</label>
+        <span class="hint">Iš skattekortet — pvz. 37</span>
         <div class="input-wrap">
           <input type="number" id="k-skat" value="37" min="1" max="60" step="1">
           <span class="unit">%</span>
@@ -474,116 +481,116 @@
     <div class="results-grid-3b">
       <div class="result-card sh">
         <div class="rc-label">Neto SH</div>
-        <div class="rc-main"><span id="k-r-sh-val">â</span> <span class="rc-curr" id="k-r-sh-curr">DKK</span></div>
-        <div class="rc-sub" id="k-r-sh-brut">bruto: â DKK</div>
-        <div class="rc-pct" id="k-r-sh-pct">neto â %</div>
+        <div class="rc-main"><span id="k-r-sh-val">—</span> <span class="rc-curr" id="k-r-sh-curr">DKK</span></div>
+        <div class="rc-sub" id="k-r-sh-brut">bruto: — DKK</div>
+        <div class="rc-pct" id="k-r-sh-pct">neto — %</div>
       </div>
       <div class="result-card atost">
         <div class="rc-label">Neto Atostoginiai</div>
-        <div class="rc-main"><span id="k-r-atost-val">â</span> <span class="rc-curr" id="k-r-atost-curr">DKK</span></div>
-        <div class="rc-sub" id="k-r-atost-brut">bruto: â DKK</div>
-        <div class="rc-pct" id="k-r-atost-pct">neto â %</div>
+        <div class="rc-main"><span id="k-r-atost-val">—</span> <span class="rc-curr" id="k-r-atost-curr">DKK</span></div>
+        <div class="rc-sub" id="k-r-atost-brut">bruto: — DKK</div>
+        <div class="rc-pct" id="k-r-atost-pct">neto — %</div>
       </div>
       <div class="result-card total">
-        <div class="rc-label">Viso neto Ä¯ rankas</div>
-        <div class="rc-main"><span id="k-r-total-val">â</span> <span class="rc-curr" id="k-r-total-curr">DKK</span></div>
-        <div class="rc-sub" id="k-r-total-brut">bruto: â DKK</div>
-        <div class="rc-eur">â EUR:<br><b id="k-r-total-eur">â EUR</b></div>
+        <div class="rc-label">Viso neto į rankas</div>
+        <div class="rc-main"><span id="k-r-total-val">—</span> <span class="rc-curr" id="k-r-total-curr">DKK</span></div>
+        <div class="rc-sub" id="k-r-total-brut">bruto: — DKK</div>
+        <div class="rc-eur">≈ EUR:<br><b id="k-r-total-eur">— EUR</b></div>
       </div>
     </div>
 
     <div class="payslip-header-bar">
-      <div class="section-title" style="margin:0;border:none;padding:0">MokesÄiÅ³ skaiÄiavimas</div>
+      <div class="section-title" style="margin:0;border:none;padding:0">Mokesčių skaičiavimas</div>
       <span class="ps-badge" id="k-ps-badge">DKK</span>
     </div>
     <div class="payslip">
       <div class="ps-head">
-        <span>KaupiniÅ³ iÅ¡mokÄjimas</span>
-        <span class="ps-sub" id="k-ps-total-brut">bruto: â</span>
+        <span>Kaupinių išmokėjimas</span>
+        <span class="ps-sub" id="k-ps-total-brut">bruto: —</span>
       </div>
-      <div class="ps-row group"><span>PRISKAITYMAI (bruto)</span><span class="ps-val" id="k-ps-bruto">â</span></div>
-      <div class="ps-row indent"><span>SH bruto</span><span class="ps-val" id="k-ps-sh-bruto">â</span></div>
-      <div class="ps-row indent"><span>Atostoginiai bruto</span><span class="ps-val" id="k-ps-atost-bruto">â</span></div>
-      <div class="ps-row group"><span>IÅ SKAITYMAI (mokesÄiai)</span><span></span></div>
-      <div class="ps-row indent"><span>AM-indkomst (bendra suma)</span><span class="ps-val" id="k-ps-amind">â</span></div>
-      <div class="ps-row indent deduct"><span>AM-bidrag (8 %)</span><span class="ps-val" id="k-ps-ambidrag">â</span></div>
-      <div class="ps-row indent"><span>A-skat bazÄ (AM-ind. Ã 92 % â fradrag)</span><span class="ps-val" id="k-ps-skatbaze">â</span></div>
-      <div class="ps-row indent deduct"><span>A-skat (<span id="k-ps-skat-pct">37</span> %)</span><span class="ps-val" id="k-ps-askat">â</span></div>
-      <div class="ps-row ps-total"><span>VISO NETO Ä® RANKAS</span><span class="ps-val" id="k-ps-neto">â</span></div>
+      <div class="ps-row group"><span>PRISKAITYMAI (bruto)</span><span class="ps-val" id="k-ps-bruto">—</span></div>
+      <div class="ps-row indent"><span>SH bruto</span><span class="ps-val" id="k-ps-sh-bruto">—</span></div>
+      <div class="ps-row indent"><span>Atostoginiai bruto</span><span class="ps-val" id="k-ps-atost-bruto">—</span></div>
+      <div class="ps-row group"><span>IŠSKAITYMAI (mokesčiai)</span><span></span></div>
+      <div class="ps-row indent"><span>AM-indkomst (bendra suma)</span><span class="ps-val" id="k-ps-amind">—</span></div>
+      <div class="ps-row indent deduct"><span>AM-bidrag (8 %)</span><span class="ps-val" id="k-ps-ambidrag">—</span></div>
+      <div class="ps-row indent"><span>A-skat bazė (AM-ind. × 92 % – fradrag)</span><span class="ps-val" id="k-ps-skatbaze">—</span></div>
+      <div class="ps-row indent deduct"><span>A-skat (<span id="k-ps-skat-pct">37</span> %)</span><span class="ps-val" id="k-ps-askat">—</span></div>
+      <div class="ps-row ps-total"><span>VISO NETO Į RANKAS</span><span class="ps-val" id="k-ps-neto">—</span></div>
     </div>
 
     <div class="note">
-      <b>Pastabos:</b> SH ir Atostoginiai apmokestinami kartu â AM-bidrag 8 % ir A-skat taikomi bendrai sumai.
-      Fradrag (iÅ¡ skattekortet) atimamas vienÄ kartÄ nuo bendros AM-indkomst.
-      Neto SH ir Neto Atostoginiai apskaiÄiuojami proporcingai pagal kiekvieno dalÄ¯ bendrame bruto.
+      <b>Pastabos:</b> SH ir Atostoginiai apmokestinami kartu — AM-bidrag 8 % ir A-skat taikomi bendrai sumai.
+      Fradrag (iš skattekortet) atimamas vieną kartą nuo bendros AM-indkomst.
+      Neto SH ir Neto Atostoginiai apskaičiuojami proporcingai pagal kiekvieno dalį bendrame bruto.
       EUR kursas: <b>7,48 DKK/EUR</b>.
     </div>
   </div><!-- /tab-kaupin -->
 
 
-  <!-- ââ TAB 3 â SVARBI INFORMACIJA ââ -->
+  <!-- ══ TAB 3 — SVARBI INFORMACIJA ══ -->
   <div id="tab-info" class="tab-panel">
 
     <div class="info-box" style="margin-bottom:0; border-radius:0; border-left:3px solid #EAB308; background:#FEF9C3; color:#713F12;">
-      <strong>Svarbu:</strong> Visi Å¡iame gide nurodyti atlyginimai ir ]arifai yra <strong>Brutto</strong> (prieÅ¡ mokesÄius). Suma, kuriÄ gausite âÄ¯ rankas", priklausys nuo jÅ«lÅ³ asmeninio mokesÄiÅ³ tarifo ir neapmokestinamojo pajamÅ³ dydÅ¾io (fradrag).
+      <strong>Svarbu:</strong> Visi šiame gide nurodyti atlyginimai ir tarifai yra <strong>Brutto</strong> (prieš mokesčius). Suma, kurią gausite „į rankas", priklausys nuo jūsų asmeninio mokesčių tarifo ir neapmokestinamojo pajamų dydžio (fradrag).
     </div>
 
     <div class="info-tab">
 
 
 
-      <!-- 1. MinimalÅ«s atlyginimai -->
+      <!-- 1. Minimalūs atlyginimai -->
       <div class="info-item">
         <div class="info-item-header" onclick="toggleInfo(this)">
-          <span class="info-item-title">1. MinimalÅ«s atlyginimai pagal profesijas</span>
-          <span class="info-item-arrow">â¼</span>
+          <span class="info-item-title">1. Minimalūs atlyginimai pagal profesijas</span>
+          <span class="info-item-arrow">▼</span>
         </div>
         <div class="info-item-body">
-          <p>Danijoje nÄra valstybÄs nustatyto minimalaus atlyginimo â jÄ¯ nustato profesinÄs sÄjungos. Nurodyti tarifai yra tik minimali riba, o reali alga daÅ¾niausiai yra didesnÄ, priklausomai nuo jÅ«sÅ³ patirties.</p>
+          <p>Danijoje nėra valstybės nustatyto minimalaus atlyginimo – jį nustato profesinės sąjungos. Nurodyti tarifai yra tik minimali riba, o reali alga dažniausiai yra didesnė, priklausomai nuo jūsų patirties.</p>
           <table class="info-table">
-            <thead><tr><th>Profesija</th><th>Nuo 2025-05-01 (prieÅ¡ mokesÄius)</th><th>Nuo 2026-03 (prieÅ¡ mokesÄius)</th></tr></thead>
+            <thead><tr><th>Profesija</th><th>Nuo 2025-05-01 (prieš mokesčius)</th><th>Nuo 2026-03 (prieš mokesčius)</th></tr></thead>
             <tbody>
-              <tr><td>Betonuotojai, staliai, mÅ«rininkai, bendrastatybiniai darbininkai</td><td><strong>146,40 DKK/val</strong></td><td>149,90 DKK/val</td></tr>
-              <tr><td>Stogdengiai</td><td><strong>156,60 DKK/val</strong></td><td>â</td></tr>
-              <tr><td>DaÅ¾ytojai</td><td colspan="2">Atskira daÅ¾ytojÅ³ profsÄjungos sutartis</td></tr>
+              <tr><td>Betonuotojai, staliai, mūrininkai, bendrastatybiniai darbininkai</td><td><strong>146,40 DKK/val</strong></td><td>149,90 DKK/val</td></tr>
+              <tr><td>Stogdengiai</td><td><strong>156,60 DKK/val</strong></td><td>—</td></tr>
+              <tr><td>Dažytojai</td><td colspan="2">Atskira dažytojų profsąjungos sutartis</td></tr>
             </tbody>
           </table>
-          <p style="margin-top:12px">Papildomai prie Å¡io valandinio Ä¯kainio darbdavys privalo mokÄti:</p>
-          <p>â¢ <strong>SH</strong> (15,7 % nuo bruto nuo 2026-03) â Å¡ventiniÅ³ dienÅ³ ir laisvadieniÅ³ kaupimas â Å¾r. <strong>2 punktÄ</strong><br>
-             â¢ <strong>Atostoginiai</strong> (12,5 % nuo bruto) â kasmetiniÅ³ atostogÅ³ iÅ¡moka â Å¾r. <strong>2 punktÄ</strong><br>
-             â¢ <strong>Pensijos Ä¯moka</strong> (11 % darbdavio + 2 % darbuotojo nuo 2025-05-01) â Å¾r. <strong>4 punktÄ</strong></p>
-          <div class="info-note">Tai reiÅ¡kia, kad bendra darbdavio iÅ¡laidÅ³ suma uÅ¾ jÅ«sÅ³ darbÄ yra Å¾ymiai didesnÄ nei tik valandinis Ä¯kainis.</div>
+          <p style="margin-top:12px">Papildomai prie šio valandinio įkainio darbdavys privalo mokėti:</p>
+          <p>• <strong>SH</strong> (14,70 % nuo bruto) — šventinių dienų ir laisvadienių kaupimas → žr. <strong>2 punktą</strong><br>
+             • <strong>Atostoginiai</strong> (12,5 % nuo bruto) — kasmetinių atostogų išmoka → žr. <strong>2 punktą</strong><br>
+             • <strong>Pensijos įmoka</strong> (11 % darbdavio + 2 % darbuotojo nuo 2025-05-01) → žr. <strong>4 punktą</strong></p>
+          <div class="info-note">Tai reiškia, kad bendra darbdavio išlaidų suma už jūsų darbą yra žymiai didesnė nei tik valandinis įkainis.</div>
         </div>
 
       <!-- 2. SH ir Atostoginiai -->
       <div class="info-item">
         <div class="info-item-header" onclick="toggleInfo(this)">
-          <span class="info-item-title">2. SH ir Atostoginiai â kas tai ir kuo skiriasi?</span>
-          <span class="info-item-arrow">â¼</span>
+          <span class="info-item-title">2. SH ir Atostoginiai — kas tai ir kuo skiriasi?</span>
+          <span class="info-item-arrow">▼</span>
         </div>
         <div class="info-item-body">
-          <p>Tai du papildomi darbdavio mokÄjimai, apskaiÄiuojami nuo jÅ«sÅ³ bazinio atlyginimo prieÅ¡ mokesÄius.</p>
+          <p>Tai du papildomi darbdavio mokėjimai, apskaičiuojami nuo jūsų bazinio atlyginimo prieš mokesčius.</p>
           <table class="info-table">
             <thead><tr><th>Priedas</th><th>Tarifas</th><th>Paskirtis</th></tr></thead>
             <tbody>
-              <tr><td><strong>Atostoginiai (Feriepenge)</strong></td><td>12,5 %</td><td>KasmetinÄs apmokamos atostogos</td></tr>
-              <tr><td><strong>SH (SÃ¦rlig LÃ¸nopsparing)</strong></td><td>15,70 %</td><td>Å ventinÄs dienos + 5 asmeniniai laisvadieniai</td></tr>
+              <tr><td><strong>Atostoginiai (Feriepenge)</strong></td><td>12,5 %</td><td>Kasmetinės apmokamos atostogos</td></tr>
+              <tr><td><strong>SH (Særlig Lønopsparing)</strong></td><td>15,70 %</td><td>Šventinės dienos + 5 asmeniniai laisvadieniai</td></tr>
             </tbody>
           </table>
-          <p><strong>Atostoginiai:</strong> Darbdavys perveda 12,5 % Ä¯ valstybinÄ <em>FerieKonto</em> sistemÄ. Kai norite atostogauti, prisijungiate per <em>borger.dk/feriepenge</em> ir uÅ¾sisakote iÅ¡mokÄjimÄ Ä¯ savo banko sÄskaitÄ.</p>
-          <p><strong>SH:</strong> Nuo 2026 m. kovo darbdavys privalo skirti <strong>15,70 %</strong> (iki tol buvo 14,70 %). Jei esate komandiruotas darbuotojas iÅ¡ kitos Å¡alies â visa suma gali bÅ«ti iÅ¡mokama kas mÄnesÄ¯ su alga. Jei Ä¯darbintas Danijos Ä¯monÄje pagal DIO II sutartÄ¯: <strong>9,8 %</strong> iÅ¡mokama kas mÄnesÄ¯ su alga, o <strong>5,9 %</strong> kaupiama SH fonde ir iÅ¡mokama vÄliausiai sausio mÄnesio algos mokÄjime.</p>
-          <div class="info-note">Abu priedai apmokestinami â nuo jÅ³ iÅ¡skaiÄiuojami AM-bidrag (8 %) ir A-skat. Neto sumÄ apskaiÄiuosite KaupiniÅ³ skaiÄiuoklÄje.</div>
+          <p><strong>Atostoginiai:</strong> Darbdavys perveda 12,5 % į valstybinę <em>FerieKonto</em> sistemą. Kai norite atostogauti, prisijungiate per <em>borger.dk/feriepenge</em> ir užsisakote išmokėjimą į savo banko sąskaitą.</p>
+          <p><strong>SH:</strong> Nuo 2026 m. kovo darbdavys privalo skirti <strong>15,70 %</strong> (iki tol buvo 14,70 %). Jei esate komandiruotas darbuotojas iš kitos šalies — visa suma gali būti išmokama kas mėnesį su alga. Jei įdarbintas Danijos įmonėje pagal DIO II sutartį: <strong>9,8 %</strong> išmokama kas mėnesį su alga, o <strong>5,9 %</strong> kaupiama SH fonde ir išmokama vėliausiai sausio mėnesio algos mokėjime.</p>
+          <div class="info-note">Abu priedai apmokestinami — nuo jų išskaičiuojami AM-bidrag (8 %) ir A-skat. Neto sumą apskaičiuosite Kaupinių skaičiuoklėje.</div>
         </div>
 
-      <!-- 2b. SH iÅ¡mokÄjimas kas mÄnesÄ¯ -->
+      <!-- 3. SH išmokėjimas kas mėnesį -->
       <div class="info-item">
         <div class="info-item-header" onclick="toggleInfo(this)">
-          <span class="info-item-title">3. SH iÅ¡mokÄjimas kas mÄnesÄ¯</span>
-          <span class="info-item-arrow">â¼</span>
+          <span class="info-item-title">3. SH išmokėjimas kas mėnesį</span>
+          <span class="info-item-arrow">▼</span>
         </div>
         <div class="info-item-body">
-          <p><strong>Ar galima SH (SÃ¦rlig LÃ¸nopsparing) fondÄ gauti kas mÄnesÄ¯ su alga?</strong></p>
-          <p>Nuo 2026 m. kovo darbdavys privalo skirti <strong>15,70 %</strong> nuo bruto algos Ä¯ SH (iki tol buvo 14,70 %; nuo 2027 m. kovo kils iki 16,70 %).</p>
+          <p><strong>Ar galima SH (Særlig Lønopsparing) fondą gauti kas mėnesį su alga?</strong></p>
+          <p>Nuo 2026 m. kovo darbdavys privalo skirti <strong>15,70 %</strong> nuo bruto algos į SH (iki tol buvo 14,70 %; nuo 2027 m. kovo kils iki 16,70 %).</p>
           <table class="info-table">
             <thead><tr><th>Laikotarpis</th><th>SH tarifas</th></tr></thead>
             <tbody>
@@ -592,140 +599,140 @@
               <tr><td>Nuo 2027-03-01</td><td>16,70 %</td></tr>
             </tbody>
           </table>
-          <p><strong>Turint susitarimÄ su darbdaviu (5,9 % taisyklÄ â DIO II sutartis):</strong></p>
-          <p>IÅ¡ viso 15,70 % paskirstoma taip:<br>
-          â¢ <strong>9,8 %</strong> gausite kas mÄnesÄ¯ su alga (lÃ¸bende udbetaling)<br>
-          â¢ <strong>5,9 %</strong> liks kauptis SH fonde (optjent SH) â iÅ¡mokama Å¡ventiniÅ³ dienÅ³ ar sausio mÄnesÄ¯</p>
-          <p><strong>Be susitarimo (9,9 % taisyklÄ):</strong></p>
-          <p>Darbdavys privalo palikti fonde maÅ¾iausiai 9,9 %, todÄl:<br>
-          â¢ <strong>5,8 %</strong> iÅ¡mokama kas mÄnesÄ¯ su alga<br>
-          â¢ <strong>9,9 %</strong> lieka kauptis SH fonde</p>
-          <p><strong>Kada iÅ¡mokamas SH fondo likutis?</strong></p>
-          <p>SH fonde sukauptas likutis iÅ¡mokamas darbuotojui <strong>vÄliausiai pirmÄjÄ¯ sausio mÄnesio atlyginimo mokÄjimÄ</strong>. Jei darbo santykiai nutraukiami anksÄiau â iÅ¡mokamas iÅ¡einant.</p>
-          <div class="info-note">Litpersona laikosi DIO II kolektyvinÄs sutarties: <strong>9,8 % iÅ¡mokama su alga kiekvienÄ mÄnesÄ¯</strong>, o <strong>5,9 % kaupiama fonde</strong> ir iÅ¡mokama sausio mÄnesÄ¯ arba pasibaigus sutarÄiai.</div>
+          <p><strong>Turint susitarimą su darbdaviu (5,9 % taisyklė — DIO II sutartis):</strong></p>
+          <p>Iš viso 15,70 % paskirstoma taip:<br>
+          • <strong>9,8 %</strong> gausite kas mėnesį su alga (løbende udbetaling)<br>
+          • <strong>5,9 %</strong> liks kauptis SH fonde (optjent SH) — išmokama šventinių dienų ar sausio mėnesį</p>
+          <p><strong>Be susitarimo (9,9 % taisyklė):</strong></p>
+          <p>Darbdavys privalo palikti fonde mažiausiai 9,9 %, todėl:<br>
+          • <strong>5,8 %</strong> išmokama kas mėnesį su alga<br>
+          • <strong>9,9 %</strong> lieka kauptis SH fonde</p>
+          <p><strong>Kada išmokamas SH fondo likutis?</strong></p>
+          <p>SH fonde sukauptas likutis išmokamas darbuotojui <strong>vėliausiai pirmąjį sausio mėnesio atlyginimo mokėjimą</strong>. Jei darbo santykiai nutraukiami anksčiau — išmokamas išeinant.</p>
+          <div class="info-note">Litpersona laikosi DIO II kolektyvinės sutarties: <strong>9,8 % išmokama su alga kiekvieną mėnesį</strong>, o <strong>5,9 % kaupiama fonde</strong> ir išmokama sausio mėnesį arba pasibaigus sutarčiai.</div>
         </div>
       </div>
 
-      <!-- 3. Pensija -->
+      <!-- 4. Pensija -->
       <div class="info-item">
         <div class="info-item-header" onclick="toggleInfo(this)">
           <span class="info-item-title">4. Pensija (PensionDanmark)</span>
-          <span class="info-item-arrow">â¼</span>
+          <span class="info-item-arrow">▼</span>
         </div>
         <div class="info-item-body">
-          <p>StatybÅ³ sektoriaus darbuotojams privalomas pensijÅ³ kaupimas, jei esate vyresni nei 18 metÅ³ ir sektoriuje iÅ¡dirbote bent <strong>6 mÄnesius</strong>.</p>
+          <p>Statybų sektoriaus darbuotojams privalomas pensijų kaupimas, jei esate vyresni nei 18 metų ir sektoriuje išdirbote bent <strong>6 mėnesius</strong>.</p>
           <table class="info-table">
-            <thead><tr><th>Laikotarpis</th><th>Darbdavio dalis</th><th>Darbuotojo dalis</td><th>Bendra Ä¯moka</th></tr></thead>
+            <thead><tr><th>Laikotarpis</th><th>Darbdavio dalis</th><th>Darbuotojo dalis</th><th>Bendra įmoka</th></tr></thead>
             <tbody>
               <tr><td>Iki 2025-05-01</td><td>10 %</td><td>2 % (nuo bruto)</td><td>12 %</td></tr>
               <tr><td>Nuo 2025-05-01</td><td>11 %</td><td>2 % (nuo bruto)</td><td><strong>13 %</strong></td></tr>
             </tbody>
           </table>
-          <p><strong>Komandiruoti darbuotojai (Udstationeret):</strong> Jei darbdavys jau moka Ä¯mokas Ä¯ Lietuvos pensijÅ³ sistemÄ â Ä¯ PensionDanmark mokÄti nereikia. TaÄiau darbdavys privalo apskaiÄiuoti skirtumÄ tarp Danijos (10â11 %) ir Lietuvos Ä¯mokÅ³ ir sumokÄti jÄ¯ Ä¯ Lietuvos fondÄ arba iÅ¡mokÄti tiesiogiai kaip atlyginimo priedÄ (<em>lÃ¸ntillÃ¦g</em>).</p>
-          <p><strong>Ar galima atsiimti sukauptus pinigus?</strong> KeiÄiant darbÄ fondas perkeliamas tik Ä¯ kitÄ privalomÄ pensijÅ³ fondÄ. IÅ¡imtis â jei tampate savarankiÅ¡kai dirbanÄiu asmeniu ir per paskutinius 12 mÄn. neturÄjote dideliÅ³ samdomo darbo pajamÅ³.</p>
-          <div class="info-note"><strong>IÅ¡vykstant iÅ¡ Danijos:</strong> Lietuviai gali visiÅ¡kai atsiimti PensionDanmark pinigus po iÅ¡vykimo ir iÅ¡siregistravimo iÅ¡ CPR. TaÄiau Danijos valstybÄ taiko apie <strong>60 % mokestÄ¯</strong> â Ä¯ sÄskaitÄ gausite apie <strong>40 %</strong> sukauptos sumos. ProcedÅ«rÄ darbuotojas atlieka pats per <a href="https://www.pension.dk/" target="_blank" style="color:#713F12;font-weight:600">pension.dk</a>.</div>
+          <p><strong>Komandiruoti darbuotojai (Udstationeret):</strong> Jei darbdavys jau moka įmokas į Lietuvos pensijų sistemą — į PensionDanmark mokėti nereikia. Tačiau darbdavys privalo apskaičiuoti skirtumą tarp Danijos (10–11 %) ir Lietuvos įmokų ir sumokėti jį į Lietuvos fondą arba išmokėti tiesiogiai kaip atlyginimo priedą (<em>løntillæg</em>).</p>
+          <p><strong>Ar galima atsiimti sukauptus pinigus?</strong> Keičiant darbą fondas perkeliamas tik į kitą privalomą pensijų fondą. Išimtis — jei tampate savarankiškai dirbančiu asmeniu ir per paskutinius 12 mėn. neturėjote didelių samdomo darbo pajamų.</p>
+          <div class="info-note"><strong>Išvykstant iš Danijos:</strong> Lietuviai gali visiškai atsiimti PensionDanmark pinigus po išvykimo ir išsiregistravimo iš CPR. Tačiau Danijos valstybė taiko apie <strong>60 % mokestį</strong> — į sąskaitą gausite apie <strong>40 %</strong> sukauptos sumos. Procedūrą darbuotojas atlieka pats per <a href="https://www.pension.dk/" target="_blank" style="color:#713F12;font-weight:600">pension.dk</a>.</div>
         </div>
 
-      <!-- 4. VirÅ¡valandÅ¾iai, apgyvendinimas, kelionÄs -->
+      <!-- 4. Viršvalandžiai, apgyvendinimas, kelionės -->
       <div class="info-item">
         <div class="info-item-header" onclick="toggleInfo(this)">
-          <span class="info-item-title">5. VirÅ¡valandÅ¾iai, apgyvendinimas ir kelionÄs</span>
-          <span class="info-item-arrow">â¼</span>
+          <span class="info-item-title">5. Viršvalandžiai, apgyvendinimas ir kelionės</span>
+          <span class="info-item-arrow">▼</span>
         </div>
         <div class="info-item-body">
-          <p><strong>VirÅ¡valandÅ¾iai</strong> (standartinis grafikas, ne rotacinis)</p>
-          <p>VirÅ¡valandÅ¾iÅ³ priedai skaiÄiuojami <strong>ne nuo jÅ«sÅ³ asmeninio Ä¯kainio</strong>, o nuo <strong>minimalios sutartinÄs algos (146,40 DKK/val. nuo 2025-05-01)</strong>. Jei jÅ«sÅ³ alga didesnÄ â bazÄ lieka 146,40 DKK.</p>
+          <p><strong>Viršvalandžiai</strong> (standartinis grafikas, ne rotacinis)</p>
+          <p>Viršvalandžių priedai skaičiuojami <strong>ne nuo jūsų asmeninio įkainio</strong>, o nuo <strong>minimalios sutartinės algos (146,40 DKK/val. nuo 2025-05-01)</strong>. Jei jūsų alga didesnė — bazė lieka 146,40 DKK.</p>
           <table class="info-table">
-            <thead><tr><th>Laikotarpis</th><th>Priedas (DKK/val.)</th><th>FormulÄ</th></tr></thead>
+            <thead><tr><th>Laikotarpis</th><th>Priedas (DKK/val.)</th><th>Formulė</th></tr></thead>
             <tbody>
-              <tr><td>Pirmos 3 virÅ¡valandÅ¾iÅ³ valandos</td><td><strong>+73,20 DKK/val.</strong></td><td>50 % Ã 146,40 DKK</td></tr>
-              <tr><td>TolesnÄs valandos ir sekmadieniai</td><td><strong>+146,40 DKK/val.</strong></td><td>100 % Ã 146,40 DKK</td></tr>
+              <tr><td>Pirmos 3 viršvalandžių valandos</td><td><strong>+73,20 DKK/val.</strong></td><td>50 % × 146,40 DKK</td></tr>
+              <tr><td>Tolesnės valandos ir sekmadieniai</td><td><strong>+146,40 DKK/val.</strong></td><td>100 % × 146,40 DKK</td></tr>
             </tbody>
           </table>
-          <div class="info-note" style="margin-bottom:14px"><strong>Pavyzdys:</strong> JÅ«sÅ³ alga 170 DKK/val. â uÅ¾ 1 virÅ¡valandinÄ valandÄ gausite: 170 + <strong>73,20</strong> = <strong>243,20 DKK/val.</strong> prieÅ¡ mokesÄius. UÅ¾ sekmadienÄ¯: 170 + <strong>146,40</strong> = <strong>316,40 DKK/val.</strong> prieÅ¡ mokesÄius.</div>
+          <div class="info-note" style="margin-bottom:14px"><strong>Pavyzdys:</strong> Jūsų alga 170 DKK/val. — už 1 viršvalandinę valandą gausite: 170 + <strong>73,20</strong> = <strong>243,20 DKK/val.</strong> prieš mokesčius. Už sekmadienį: 170 + <strong>146,40</strong> = <strong>316,40 DKK/val.</strong> prieš mokesčius.</div>
 
-          <p><strong>Apgyvendinimas (BoligtillÃ¦g)</strong></p>
-          <p>Pirmuosius <strong>12 mÄnesiÅ³</strong> darbdavys privalo mokÄti <strong>25 DKK/val.</strong> apgyvendinimo priedÄ. Priedas <strong>nemokamas</strong>, jei iÅ¡pildyta bent viena sÄlyga:</p>
-          <p>1. JÅ«sÅ³ reali alga virÅ¡ija <strong>171,40 DKK/val.</strong> (minimalus + priedas) â priedas âiÅ¡tirpsta" algoje.<br>
-             2. Darbdavys nemokamai suteikia tinkamÄ gyvenamÄjÄ vietÄ (ne toliau kaip 50 km nuo objekto).</p>
+          <p><strong>Apgyvendinimas (Boligtillæg)</strong></p>
+          <p>Pirmuosius <strong>12 mėnesių</strong> darbdavys privalo mokėti <strong>25 DKK/val.</strong> apgyvendinimo priedą. Priedas <strong>nemokamas</strong>, jei išpildyta bent viena sąlyga:</p>
+          <p>1. Jūsų reali alga viršija <strong>171,40 DKK/val.</strong> (minimalus + priedas) — priedas „ištirpsta" algoje.<br>
+             2. Darbdavys nemokamai suteikia tinkamą gyvenamąją vietą (ne toliau kaip 50 km nuo objekto).</p>
 
-          <p><strong>KelionÄ Ä¯ darbÄ (KÃ¸rselsgodtgÃ¸relse)</strong></p>
+          <p><strong>Kelionė į darbą (Kørselsgodtgørelse)</strong></p>
           <table class="info-table">
-            <thead><tr><th>Atvejis</th><th>TaisyklÄ</th></tr></thead>
+            <thead><tr><th>Atvejis</th><th>Taisyklė</th></tr></thead>
             <tbody>
-              <tr><td>StandartinÄ</td><td>Atstumas &gt; 10 km (iki 35 km) â <strong>2,23 DKK/km</strong> uÅ¾ kiekvienÄ km virÅ¡ 10 km ribos (Ä¯ abi puses)</td></tr>
-              <tr><td>Kopenhagos regionas (1â2 zonos)</td><td>Kompensacija skaiÄiuojama nuo <strong>5 km</strong></td></tr>
-              <tr><td>Stogdengiai (TagdÃ¦kkere)</td><td>Fiksuotas dienos priedas uÅ¾ kelionÄs laikÄ pagal atstumÄ ir zonÄ</td></tr>
+              <tr><td>Standartinė</td><td>Atstumas &gt; 10 km (iki 35 km) — <strong>2,23 DKK/km</strong> už kiekvieną km virš 10 km ribos (į abi puses)</td></tr>
+              <tr><td>Kopenhagos regionas (1–2 zonos)</td><td>Kompensacija skaičiuojama nuo <strong>5 km</strong></td></tr>
+              <tr><td>Stogdengiai (Tagdækkere)</td><td>Fiksuotas dienos priedas už kelionės laiką pagal atstumą ir zoną</td></tr>
             </tbody>
           </table>
-          <div class="info-note">Visi priedai skaiÄiuojami prieÅ¡ mokesÄius. KelionÄs kompensacija â neapmokestinama.</div>
+          <div class="info-note">Visi priedai skaičiuojami prieš mokesčius. Kelionės kompensacija — neapmokestinama.</div>
         </div>
 
       <!-- 5. Rotacinis darbas -->
       <div class="info-item">
         <div class="info-item-header" onclick="toggleInfo(this)">
-          <span class="info-item-title">6. Rotacinis darbas uÅ¾sienieÄiams</span>
-          <span class="info-item-arrow">â¼</span>
+          <span class="info-item-title">6. Rotacinis darbas užsieniečiams</span>
+          <span class="info-item-arrow">▼</span>
         </div>
         <div class="info-item-body">
-          <p>Daugelis uÅ¾sienieÄiÅ³ nori dirbti intensyviau ir tada grÄ¯Å½ti namo ilgesniam laikui. Tam bÅ«tinas <strong>raÅ¡tiÅ¡kas susitarimas Ä¯monÄje</strong> (Lokalaftale).</p>
+          <p>Daugelis užsieniečių nori dirbti intensyviau ir tada grįžti namo ilgesniam laikui. Tam būtinas <strong>raštiškas susitarimas įmonėje</strong> (Lokalaftale).</p>
           <table class="info-table">
-            <thead><tr><th>Modelis</th><th>SavaitinÄs valandos</th><th>Kaip veikia</th></tr></thead>
+            <thead><tr><th>Modelis</th><th>Savaitinės valandos</th><th>Kaip veikia</th></tr></thead>
             <tbody>
-              <tr><td><strong>46 val. modelis</strong></td><td>Iki 46 val./sav.</td><td>Alga mokama uÅ¾ 37 val. Likusios 9 val. kaupiamos âbanke" â naudojamos kaip apmokamos dienos grÄ¯Å¾imui namo.</td></tr>
-              <tr><td><strong>Kintantis laikas</strong></td><td>Iki 50 val./sav. (10 val./d.)</td><td>Dirbama intensyviau, bet vidutinis laikas per nustatytÄ laikotarpÄ¯ neturi virÅ¡yti 37 val./sav. â bÅ«tinos laisvos savaitÄs.</td></tr>
+              <tr><td><strong>46 val. modelis</strong></td><td>Iki 46 val./sav.</td><td>Alga mokama už 37 val. Likusios 9 val. kaupiamos „banke" — naudojamos kaip apmokamos dienos grįžimui namo.</td></tr>
+              <tr><td><strong>Kintantis laikas</strong></td><td>Iki 50 val./sav. (10 val./d.)</td><td>Dirbama intensyviau, bet vidutinis laikas per nustatytą laikotarpį neturi viršyti 37 val./sav. — būtinos laisvos savaitės.</td></tr>
             </tbody>
           </table>
-          <div class="info-note">Abiem atvejais galioja tie patys Ä¯statymai kaip ir danams. Rotacinis grafikas nesuteikia galimybÄs apeiti darbo laiko taisykliÅ³ be susitarimo.</div>
+          <div class="info-note">Abiem atvejais galioja tie patys įstatymai kaip ir danams. Rotacinis grafikas nesuteikia galimybės apeiti darbo laiko taisyklių be susitarimo.</div>
         </div>
 
-      <!-- 6. Atleidimas ir drausmÄ -->
+      <!-- 6. Atleidimas ir drausmė -->
       <div class="info-item">
         <div class="info-item-header" onclick="toggleInfo(this)">
-          <span class="info-item-title">7. Atleidimas iÅ¡ darbo ir darbo drausmÄ</span>
-          <span class="info-item-arrow">â¼</span>
+          <span class="info-item-title">7. Atleidimas iš darbo ir darbo drausmė</span>
+          <span class="info-item-arrow">▼</span>
         </div>
         <div class="info-item-body">
-          <p><strong>Ä®spÄjimo terminai (Opsigelsesvarsel):</strong></p>
+          <p><strong>Įspėjimo terminai (Opsigelsesvarsel):</strong></p>
           <table class="info-table">
-            <thead><tr><th>StaÅ¾as Ä¯monÄje</th><th>Darbdavio Ä¯spÄjimas</th><th>Darbuotojo Ä¯spÄjimas</th></tr></thead>
+            <thead><tr><th>Stažas įmonėje</th><th>Darbdavio įspėjimas</th><th>Darbuotojo įspėjimas</th></tr></thead>
             <tbody>
-              <tr><td>0â1 metai</td><td>0 savaiÄiÅ³</td><td>0 savaiÄiÅ³</td></tr>
-              <tr><td>1â3 metai</td><td>3 savaitÄs</td><td>1 savaitÄ</td></tr>
+              <tr><td>0–1 metai</td><td>0 savaičių</td><td>0 savaičių</td></tr>
+              <tr><td>1–3 metai</td><td>3 savaitės</td><td>1 savaitė</td></tr>
             </tbody>
           </table>
-          <p><strong>Neatvykimas Ä¯ darbÄ (Bortvisning):</strong> Jei darbuotojas neateina Ä¯ darbÄ be praneÅ¡imo, pateisina ligÄ bet atsisako pateikti gydytojo paÅ¾ymÄ, arba piktybiÅ¡kai nesilaiko grafiko â tai traktuojama kaip Å¡iurkÅ¡tus paÅ¾eidimas. Darbdavys gali <strong>atleisti nedelsiant</strong> (be Ä¯spÄjimo termino) ir reikalauti finansinÄs kompensacijos uÅ¾ nuostolius.</p>
+          <p><strong>Neatvykimas į darbą (Bortvisning):</strong> Jei darbuotojas neateina į darbą be pranešimo, pateisina ligą bet atsisako pateikti gydytojo pažymą, arba piktybiškai nesilaiko grafiko — tai traktuojama kaip šiurkštus pažeidimas. Darbdavys gali <strong>atleisti nedelsiant</strong> (be įspėjimo termino) ir reikalauti finansinės kompensacijos už nuostolius.</p>
         </div>
       </div>
 
       <!-- 7. Fradrag (renumbered) -->
       <div class="info-item">
         <div class="info-item-header" onclick="toggleInfo(this)">
-          <span class="info-item-title">8. Kas yra Fradrag (mokesÄiÅ³ lengvata)?</span>
-          <span class="info-item-arrow">â¼</span>
+          <span class="info-item-title">8. Kas yra Fradrag (mokesčių lengvata)?</span>
+          <span class="info-item-arrow">▼</span>
         </div>
         <div class="info-item-body">
-          <p><strong>Fradrag</strong> â jÅ«sÅ³ <strong>neapmokestinamas pajamÅ³ dydis</strong> per mÄnesÄ¯. Iki Å¡ios sumos uÅ¾dirbtoms pajamoms A-skat netaikomas.</p>
-          <p>PavyzdÅ¾iui, jei mÄnesinis fradrag â <strong>5 000 DKK</strong>, o AM-indkomst â 25 000 DKK, tai A-skat skaiÄiuojamas tik nuo <strong>20 000 DKK</strong>.</p>
-          <p>Fradrag suteikiamas automatiÅ¡kai. Jo dydÄ¯ rasite savo <strong>skattekortet</strong> per <a href="https://skat.dk/borger/fradrag" target="_blank" style="color:#1F3864;font-weight:600">skat.dk</a> arba paskutiniame algalapyje.</p>
-          <div class="info-note">Jei dirbate pas kelis darbdavius â fradrag taikykite tik pas <strong>pagrindinÄ¯</strong>. Pas kitus â 0 DKK fradrag.</div>
+          <p><strong>Fradrag</strong> — jūsų <strong>neapmokestinamas pajamų dydis</strong> per mėnesį. Iki šios sumos uždirbtoms pajamoms A-skat netaikomas.</p>
+          <p>Pavyzdžiui, jei mėnesinis fradrag — <strong>5 000 DKK</strong>, o AM-indkomst — 25 000 DKK, tai A-skat skaičiuojamas tik nuo <strong>20 000 DKK</strong>.</p>
+          <p>Fradrag suteikiamas automatiškai. Jo dydį rasite savo <strong>skattekortet</strong> per <a href="https://skat.dk/borger/fradrag" target="_blank" style="color:#1F3864;font-weight:600">skat.dk</a> arba paskutiniame algalapyje.</p>
+          <div class="info-note">Jei dirbate pas kelis darbdavius — fradrag taikykite tik pas <strong>pagrindinį</strong>. Pas kitus — 0 DKK fradrag.</div>
         </div>
 
       <!-- 8. EU gyvenamosios vietos leidimas -->
       <div class="info-item">
         <div class="info-item-header" onclick="toggleInfo(this)">
           <span class="info-item-title">9. EU gyvenamosios vietos leidimas Danijoje</span>
-          <span class="info-item-arrow">â¼</span>
+          <span class="info-item-arrow">▼</span>
         </div>
         <div class="info-item-body">
-          <p>ES/EEE pilieÄiai (Ä¯skaitant lietuvius) gali <strong>laisvai atvykti ir dirbti Danijoje</strong> be vizos ar atskiro darbo leidimo.</p>
-          <p><strong>Pirmos 3 mÄnesiai:</strong> galima gyventi ir dirbti be jokio papildomo dokumento.</p>
-          <p><strong>Po 3 mÄnesiÅ³</strong> â bÅ«tina kreiptis dÄl <strong>EU registracijos paÅ¾ymÄjimo</strong> (<em>EU-registreringsbevis</em>):</p>
-          <p>â¢ PraÅ¡ymas teikiamas per <a href="https://www.nyidanmark.dk/en-GB/You-want-to-apply/Residence-as-a-Nordic-citizen-or-EU-or-EEA-citizen" target="_blank" style="color:#1F3864;font-weight:600">nyidanmark.dk</a><br>
-             â¢ Reikia: paso / asmens tapatybÄs kortelÄs, darbo sutarties, Danijos adreso.<br>
-             â¢ Gavus paÅ¿ymÄjimÄ â galima registruotis savivaldybÄje ir gauti <strong>CPR numerÄ¯</strong>.</p>
-          <p><strong>CPR numeris</strong> â bÅ«tinas norint: gauti algÄ, atidaryti banko sÄskaitÄ, pasinaudoti sveikatos apsauga, gauti skattekortet.</p>
-          <div class="info-note">Nors ES pilieÄiams darbo leidimas nereikalingas, registracijos paÅ¾ymÄjimas ir CPR numeris â <strong>praktiÅ¡kai bÅ«tini</strong> oficialiam darbui Danijoje.</div>
+          <p>ES/EEE piliečiai (įskaitant lietuvius) gali <strong>laisvai atvykti ir dirbti Danijoje</strong> be vizos ar atskiro darbo leidimo.</p>
+          <p><strong>Pirmos 3 mėnesiai:</strong> galima gyventi ir dirbti be jokio papildomo dokumento.</p>
+          <p><strong>Po 3 mėnesių</strong> — būtina kreiptis dėl <strong>EU registracijos pažymėjimo</strong> (<em>EU-registreringsbevis</em>):</p>
+          <p>• Prašymas teikiamas per <a href="https://www.nyidanmark.dk/en-GB/You-want-to-apply/Residence-as-a-Nordic-citizen-or-EU-or-EEA-citizen" target="_blank" style="color:#1F3864;font-weight:600">nyidanmark.dk</a><br>
+             • Reikia: paso / asmens tapatybės kortelės, darbo sutarties, Danijos adreso.<br>
+             • Gavus pažymėjimą — galima registruotis savivaldybėje ir gauti <strong>CPR numerį</strong>.</p>
+          <p><strong>CPR numeris</strong> — būtinas norint: gauti algą, atidaryti banko sąskaitą, pasinaudoti sveikatos apsauga, gauti skattekortet.</p>
+          <div class="info-note">Nors ES piliečiams darbo leidimas nereikalingas, registracijos pažymėjimas ir CPR numeris — <strong>praktiškai būtini</strong> oficialiam darbui Danijoje.</div>
         </div>
 
     </div>    </div>
@@ -734,7 +741,7 @@
 </div><!-- /card -->
 
 <script>
-/* ââ SHARED ââ */
+/* ── SHARED ── */
 const EUR_DKK = 7.48;
 let showEur = false;
 
@@ -753,10 +760,10 @@ function setCurr(c) {
 function fmt(n, dec=2) { return n.toLocaleString('da-DK',{minimumFractionDigits:dec,maximumFractionDigits:dec}); }
 function fmtV(v, dec=2) { return showEur ? fmt(v/EUR_DKK,dec) : fmt(v,dec); }
 function curr() { return showEur ? 'EUR' : 'DKK'; }
-function neg(v) { return 'â '+fmtV(Math.abs(v)); }
+function neg(v) { return '− '+fmtV(Math.abs(v)); }
 function set(id,val){ const e=document.getElementById(id); if(e) e.textContent=val; }
 
-/* ââ TAB 1 â ATLYGINIMAS ââ */
+/* ── TAB 1 — ATLYGINIMAS ── */
 const A = { SH:0.157, SH_LOBENDE:0.098, SH_OPTJENT:0.059, HOL:0.125, AM:0.08, PENS:0.02, ATP:99, WM:155.4/37 };
 let aS = {};
 function aCalc() {
@@ -781,21 +788,21 @@ function aCalc() {
 function aRender() {
   if(!Object.keys(aS).length) return;
   const {rate,hm,skatPct,rent,atp,base,pension,amInd,amBidrag,skatBaze,aSkat,netoP,netoF,shB,shLobende,shLobendeN,shOptjent,shOptjentN,holB,shN,holN,shAN,sukaupNeto,allN,allEH}=aS;
-  const hr=rent>0, nd=hr?netoF:netoP, ndSH=(hr?netoF:netoP)+shLobendeN;
-  set('a-r-neto-val',fmtV(ndSH,0)); set('a-r-neto-curr',curr());
-  set('a-r-neto-sub',`/ mÄn. Â· ${fmt(hm,0)} val.`);
+  const hr=rent>0, nd=hr?netoF:netoP;
+  set('a-r-neto-val',fmtV(nd,0)); set('a-r-neto-curr',curr());
+  set('a-r-neto-sub',`/ mėn. · ${fmt(hm,0)} val.`);
   set('a-r-allin',`${fmt(allEH,2)} EUR/val.`);
   const rn=document.getElementById('a-r-rent-note');
   if(hr){rn.style.display='';set('a-r-rent-val',fmtV(rent,0)+' '+curr());}else rn.style.display='none';
-  set('a-r-sh-val',fmtV(shB,0)); set('a-r-sh-curr',curr()); set('a-r-sh-lobende',`Su alga iÅ¡mokama (9,8 %): ${fmtV(shLobende,0)} ${curr()}`); set('a-r-sh-optjent',`Kaupiama fonde (5,9 %): ${fmtV(shOptjent,0)} ${curr()}`); set('a-r-sh-neto',`neto â ${fmtV(shN,0)} ${curr()}`);
-  set('a-r-atost-val',fmtV(holB,0)); set('a-r-atost-curr',curr()); set('a-r-atost-neto',`neto â ${fmtV(holN,0)} ${curr()}`);
+  set('a-r-sh-val',fmtV(shB,0)); set('a-r-sh-curr',curr()); set('a-r-sh-lobende',`Su alga išmokama (9,8 %): ${fmtV(shLobende,0)} ${curr()}`); set('a-r-sh-optjent',`Kaupiama fonde (5,9 %): ${fmtV(shOptjent,0)} ${curr()}`); set('a-r-sh-neto',`neto ≈ ${fmtV(shN,0)} ${curr()}`);
+  set('a-r-atost-val',fmtV(holB,0)); set('a-r-atost-curr',curr()); set('a-r-atost-neto',`neto ≈ ${fmtV(holN,0)} ${curr()}`);
   const aPR=netoP+shAN, aPH=hm>0?aPR/hm:0, aH=hm>0?allN/hm:0;
   set('a-sb-total',fmtV(aPR,0)); set('a-sb-total-curr',' '+curr());
   set('a-sb-hr',fmtV(aPH,2)); set('a-sb-hr-curr',' '+curr()+'/val.');
-  set('a-sb-hr-sub',`${fmt(hm,1)} val. per mÄn.`);
+  set('a-sb-hr-sub',`${fmt(hm,1)} val. per mėn.`);
   const sbR=document.getElementById('a-sb-rent-row');
   if(hr){sbR.style.display='';set('a-sb-total-after',fmtV(allN,0));set('a-sb-total-after-curr',' '+curr());set('a-sb-hr-after',fmtV(aH,2));set('a-sb-hr-after-curr',' '+curr()+'/val.');}else sbR.style.display='none';
-  set('a-ps-badge',curr()); set('a-ps-period',`${fmt(hm,1)} val/mÄn.`);
+  set('a-ps-badge',curr()); set('a-ps-period',`${fmt(hm,1)} val/mėn.`);
   document.getElementById('a-ps-rate').textContent=fmt(rate,2);
   document.getElementById('a-ps-hrs').textContent=fmt(hm,1);
   document.getElementById('a-ps-skat-pct').textContent=Math.round(skatPct*100);
@@ -811,18 +818,18 @@ function aRender() {
     rG.style.display=rR.style.display=aR.style.display=hR.style.display='';
     set('a-ps-rent',neg(rent)+' '+curr()); set('a-ps-neto-after',fmtV(netoF+shLobendeN,2)+' '+curr());
     set('a-ps-hr-after',fmtV(hm>0?(netoF+shLobendeN)/hm:0,2)+' '+curr()+'/val.');
-    set('a-ps-eur-label',showEur?'DKK Ä¯ rankas po nuomos':'â EUR Ä¯ rankas po nuomos (kursas 7,48)');
+    set('a-ps-eur-label',showEur?'DKK į rankas po nuomos':'≈ EUR į rankas po nuomos (kursas 7,48)');
   }else{
     rG.style.display=rR.style.display=aR.style.display=hR.style.display='none';
-    set('a-ps-eur-label',showEur?'DKK Ä¯ rankas':'â EUR Ä¯ rankas (kursas 7,48)');
+    set('a-ps-eur-label',showEur?'DKK į rankas':'≈ EUR į rankas (kursas 7,48)');
   }
-  set('a-ps-neto-eur',showEur?fmt((hr?netoF:netoP)+shLobendeN,2)+' DKK':'â '+fmt(((hr?netoF:netoP)+shLobendeN)/EUR_DKK,2)+' EUR');
+  set('a-ps-neto-eur',showEur?fmt((hr?netoF:netoP)+shLobendeN,2)+' DKK':'≈ '+fmt(((hr?netoF:netoP)+shLobendeN)/EUR_DKK,2)+' EUR');
   set('a-ps-sh-lobende',fmtV(shLobende,2)+' '+curr()); set('a-ps-sh-optjent',fmtV(shOptjent,2)+' '+curr()); set('a-ps-atost',fmtV(holB,2)+' '+curr());
-  set('a-ps-sh-atost-neto','â '+fmtV(sukaupNeto,2)+' '+curr());
+  set('a-ps-sh-atost-neto','≈ '+fmtV(sukaupNeto,2)+' '+curr());
 }
 ['a-rate','a-hours','a-fradrag','a-skat','a-rent'].forEach(id=>document.getElementById(id).addEventListener('input',aCalc));
 
-/* ââ TAB 2 â KAUPINIAI ââ */
+/* ── TAB 2 — KAUPINIAI ── */
 let kS = {};
 function kCalc() {
   const shB=parseFloat(document.getElementById('k-sh').value)||0;
@@ -842,7 +849,7 @@ function kRender() {
   set('k-r-sh-val',fmtV(shN,0)); set('k-r-sh-curr',curr()); set('k-r-sh-brut',`bruto: ${fmtV(shB,0)} ${curr()}`); set('k-r-sh-pct',`neto ${p} %`);
   set('k-r-atost-val',fmtV(atN,0)); set('k-r-atost-curr',curr()); set('k-r-atost-brut',`bruto: ${fmtV(atB,0)} ${curr()}`); set('k-r-atost-pct',`neto ${p} %`);
   set('k-r-total-val',fmtV(neto,0)); set('k-r-total-curr',curr()); set('k-r-total-brut',`bruto: ${fmtV(tot,0)} ${curr()}`);
-  set('k-r-total-eur',showEur?`${fmt(neto,0)} EUR`:`â ${fmt(neto/EUR_DKK,2)} EUR`);
+  set('k-r-total-eur',showEur?`${fmt(neto,0)} EUR`:`≈ ${fmt(neto/EUR_DKK,2)} EUR`);
   set('k-ps-badge',curr()); set('k-ps-total-brut',`bruto: ${fmtV(tot,2)} ${curr()}`);
   document.getElementById('k-ps-skat-pct').textContent=Math.round(skatPct*100);
   set('k-ps-bruto',fmtV(tot,2)+' '+curr()); set('k-ps-sh-bruto',fmtV(shB,2)+' '+curr());
@@ -852,7 +859,7 @@ function kRender() {
 }
 ['k-sh','k-atost','k-fradrag','k-skat'].forEach(id=>document.getElementById(id).addEventListener('input',kCalc));
 
-/* ââ Init ââ */
+/* ── Init ── */
 aCalc(); kCalc();
 
 function toggleInfo(header) {
