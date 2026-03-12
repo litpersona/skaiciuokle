@@ -120,7 +120,13 @@
     font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
     letter-spacing: 1.2px; color: #1F3864;
     margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #1F3864;
+    cursor: pointer; user-select: none; display: flex; justify-content: space-between; align-items: center;
   }
+  .section-title:hover { opacity: 0.75; }
+  .collapse-arrow { font-size: 1rem; font-weight: 400; opacity: 0.5; transition: transform 0.25s ease; text-transform: none; letter-spacing: 0; }
+  .collapse-arrow.rotated { transform: rotate(-90deg); }
+  .collapsible-content { overflow: hidden; max-height: 4000px; opacity: 1; transition: max-height 0.4s ease, opacity 0.25s ease; }
+  .collapsible-content.collapsed { max-height: 0; opacity: 0; }
 
   /* ── INPUTS ── */
   .inputs-grid {
@@ -892,6 +898,38 @@ function toggleInfo(header) {
   }
 }
 
+</script>
+<script>
+/* ── COLLAPSIBLE SECTIONS ── */
+function initCollapsible(tabId) {
+  const tab = document.getElementById(tabId);
+  if (!tab) return;
+  tab.querySelectorAll('.section-title').forEach(title => {
+    const siblings = [];
+    let el = title.nextElementSibling;
+    while (el && !el.classList.contains('section-title') && !el.classList.contains('note')) {
+      siblings.push(el);
+      el = el.nextElementSibling;
+    }
+    if (!siblings.length) return;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'collapsible-content';
+    title.after(wrapper);
+    siblings.forEach(s => wrapper.appendChild(s));
+    const arrow = document.createElement('span');
+    arrow.className = 'collapse-arrow';
+    arrow.textContent = '▾';
+    title.appendChild(arrow);
+    let collapsed = false;
+    title.addEventListener('click', () => {
+      collapsed = !collapsed;
+      wrapper.classList.toggle('collapsed', collapsed);
+      arrow.classList.toggle('rotated', collapsed);
+    });
+  });
+}
+initCollapsible('tab-atlyg');
+initCollapsible('tab-kaupin');
 </script>
 </body>
 </html>
