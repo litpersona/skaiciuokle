@@ -191,6 +191,8 @@
   .rc-curr  { font-size: 0.7rem; font-weight: 600; opacity: 0.55; margin-left: 2px; }
   .rc-sub   { font-size: 0.78rem; font-weight: 500; opacity: 0.78; }
   .rc-pct   { font-size: 0.72rem; font-weight: 700; margin-top: 3px; opacity: 0.68; }
+  .rc-explain { font-size: 0.69rem; margin-top: 8px; opacity: 0.6; line-height: 1.45; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 6px; }
+  .rc-muted { font-size: 0.68rem; opacity: 0.45; font-weight: 400; margin-top: 2px; }
   .rc-allin { margin-top: 9px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.22); font-size: 0.73rem; opacity: 0.72; line-height: 1.5; }
   .rc-allin b { font-size: 1rem; font-weight: 800; opacity: 1; display: block; margin-top: 1px; }
   .rc-rent-note { margin-top: 6px; font-size: 0.7rem; background: rgba(245,158,11,0.22); border-radius: 5px; padding: 4px 7px; color: #fbbf24; font-weight: 600; }
@@ -334,28 +336,32 @@
         <div class="rc-label">Neto alga į rankas</div>
         <div class="rc-main"><span id="a-r-neto-val">—</span> <span class="rc-curr" id="a-r-neto-curr">DKK</span></div>
         <div class="rc-sub" id="a-r-neto-sub">/ mėn.</div>
-        <div class="rc-allin">Viskas į rankas (+ SH + atost.):<br><b id="a-r-allin">— EUR/val.</b></div>
         <div class="rc-rent-note" id="a-r-rent-note" style="display:none">🏠 – <span id="a-r-rent-val">—</span> nuoma atskaičiuota</div>
+        <div class="rc-explain">Faktiškai išmokama algos dieną. Įskaičiuota SH 9,8&nbsp;% dalis, mokama kartu su alga.</div>
       </div>
       <div class="result-card sh">
-        <div class="rc-label">SH (Søgne- og Helligdag)</div>
+        <div class="rc-label">SH kaupiniai fonde</div>
         <div class="rc-main"><span id="a-r-sh-val">—</span> <span class="rc-curr" id="a-r-sh-curr">DKK</span></div>
-        <div class="rc-sub">neto į rankas po mokesčių</div>
-        <div class="rc-pct" id="a-r-sh-bruto">Bruto: — (15,7 %)</div>
-        <div class="rc-pct" id="a-r-sh-lobende">Su alga išmokama (9,8 %): —</div>
-        <div class="rc-pct" id="a-r-sh-optjent">Kaupiama fonde (5,9 %): —</div>
+        <div class="rc-sub">neto kaupiama fonde (5,9 %)</div>
+        <div class="rc-pct" id="a-r-sh-bruto">Bruto: — (5,9 %)</div>
+        <div class="rc-pct rc-muted" id="a-r-sh-lobende">—</div>
+        <div class="rc-explain">SH 9,8 % mokama su alga — jau įskaičiuota į algą kairėje.</div>
       </div>
       <div class="result-card atost">
         <div class="rc-label">Atostoginiai (Feriepenge)</div>
         <div class="rc-main"><span id="a-r-atost-val">—</span> <span class="rc-curr" id="a-r-atost-curr">DKK</span></div>
-        <div class="rc-sub">neto sukaups po mokesčių</div>
+        <div class="rc-sub">neto kaupiama fonde (12,5 %)</div>
         <div class="rc-pct" id="a-r-atost-bruto">Bruto: — (12,5 %)</div>
+        <div class="rc-explain">Kaupiama fonde, išmokama atostogų metu.</div>
       </div>
     </div>
 
-    <div class="payslip-header-bar">
+    <div class="payslip-header-bar" style="margin-top:24px;">
       <div class="section-title" style="margin:0;border:none;padding:0">Algalapio struktūra</div>
       <span class="ps-badge" id="a-ps-badge">DKK</span>
+    </div>
+    <div style="font-size:0.75rem;color:#6b7280;padding:6px 2px 10px;line-height:1.5;">
+      Čia yra jūsų algos dieną sumokamų pinigų išklotinė. SH kaupiniai ir atostoginiai šiame sąraše nerodomi — jie išmokami atskirai.
     </div>
     <div class="payslip">
       <div class="ps-head">
@@ -399,14 +405,15 @@
 
     <div class="summary-bar" style="margin-top:16px;">
       <div class="sb-title-row">
-        <div class="sb-col-head">Viso neto į rankas per mėn.</div>
-        <div class="sb-col-head">Valandinis uždarbis neto</div>
+        <div class="sb-col-head" style="font-size:0.85rem;letter-spacing:0.04em;">📊 Kiek iš viso uždirbau į rankas</div>
+      </div>
+      <div style="padding:2px 14px 10px;font-size:0.72rem;color:#94a3b8;line-height:1.5;">
+        = Neto alga &nbsp;+&nbsp; SH kaupiniai fonde &nbsp;+&nbsp; Atostoginiai &nbsp;(visi trys blokai aukščiau sudėti)
       </div>
       <div class="sb-data-row">
         <div class="sb-cell">
           <div class="sb-row-label">Prieš nuomą</div>
           <div class="sb-value"><span id="a-sb-total">—</span><span class="sb-curr" id="a-sb-total-curr"> DKK</span></div>
-          <div class="sb-sub">Alga + SH + Atost. neto</div>
         </div>
         <div class="sb-cell">
           <div class="sb-row-label">Prieš nuomą</div>
@@ -425,7 +432,7 @@
         </div>
       </div>
       <div style="padding:10px 14px 4px;font-size:0.72rem;color:#94a3b8;border-top:1px solid rgba(255,255,255,0.07);margin-top:8px;line-height:1.5;">
-        ℹ Čia rodoma bendra mėnesio uždarbio suma: alga su SH (9,8&nbsp;%), pridėjus SH kaupiniuos (5,9&nbsp;%) ir atostoginius (12,5&nbsp;%), kurie kaupiami fonde ir išmokami atskirai atėjus laikui.
+        ℹ Čia nurodoma jūsų per laikotarpį uždirbta pinigų suma: algų dieną išmokėta suma plius sukaupti SH (5,9&nbsp;%) ir atostoginiai (12,5&nbsp;%), kuriuos gausite atėjus laikui.
       </div>
     </div>
 
@@ -805,7 +812,7 @@ function aRender() {
   set('a-r-allin',`${fmt(allEH,2)} EUR/val.`);
   const rn=document.getElementById('a-r-rent-note');
   if(hr){rn.style.display='';set('a-r-rent-val',fmtV(rent,0)+' '+curr());}else rn.style.display='none';
-  set('a-r-sh-val',fmtV(shN,0)); set('a-r-sh-curr',curr()); set('a-r-sh-bruto',`Bruto: ${fmtV(shB,0)} ${curr()} (15,7 %)`); set('a-r-sh-lobende',`Su alga išmokama (9,8 %): ${fmtV(shLobende,0)} ${curr()}`); set('a-r-sh-optjent',`Kaupiama fonde (5,9 %): ${fmtV(shOptjent,0)} ${curr()}`);
+  set('a-r-sh-val',fmtV(shOptjentN,0)); set('a-r-sh-curr',curr()); set('a-r-sh-bruto',`Bruto: ${fmtV(shOptjent,0)} ${curr()} (5,9 %)`); set('a-r-sh-lobende',`SH 9,8 % (${fmtV(shLobende,0)} ${curr()}) — mokama su alga, įskaičiuota į algą`);
   set('a-r-atost-val',fmtV(holN,0)); set('a-r-atost-curr',curr()); set('a-r-atost-bruto',`Bruto: ${fmtV(holB,0)} ${curr()} (12,5 %)`);
   const aPR=netoP+sukaupNeto, aPH=hm>0?aPR/hm:0, aH=hm>0?allN/hm:0;
   set('a-sb-total',fmtV(aPR,0)); set('a-sb-total-curr',' '+curr());
